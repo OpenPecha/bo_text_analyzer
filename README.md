@@ -7,18 +7,17 @@
 
 <!-- Replace with 1-sentence description about what this tool is or does.-->
 
-<h3 align="center">Use this repo template for all new Python projects.</h3>
+<h3 align="center">Using Botok for Analyzing OCR Text Quality in Openpecha-data </h3>
 
 ## Description
 
-Project description goes here.
+This RFC proposes the use of the Botok library to analyze the quality of OCR text within the openpecha-data repository. Specifically, it aims to identify illegible or unusable text portions within the e-texts that contain non-words.
 
 ## Project owner(s)
 
 <!-- Link to the repo owners' github profiles -->
 
-- [@10zinten](https://github.com/10zinten)
-- [@evanyerburgh](https://github.com/evanyerburgh)
+- [@gangagyatsp4364](https://github.com/gangagyatso4364)
 
 ## Integrations
 
