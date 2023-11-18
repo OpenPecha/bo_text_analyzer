@@ -31,9 +31,7 @@ def select_random_pecha_ids(csv_file_path, num_rows):
         return None
 
 
-def extract_and_save_text_files(
-    organization, github_token, pecha_ids, start_offset, end_offset, output_folder
-):
+def extract_and_save_text_files(organization, github_token, pecha_ids, output_folder):
     try:
         # Initialize the PyGithub client with your token
         g = Github(github_token)
@@ -54,9 +52,11 @@ def extract_and_save_text_files(
 
                 # Get the contents of the base folder
                 base_folder_contents = repo.get_contents(base_folder_path)
+                # Implementing the new file selection logic
+                files_to_process = select_files(base_folder_contents)
 
                 # Iterate through the contents and process text files
-                for file_content in base_folder_contents:
+                for file_content in files_to_process:
                     if file_content.type == "file" and file_content.name.endswith(
                         ".txt"
                     ):
@@ -64,9 +64,22 @@ def extract_and_save_text_files(
                         full_text = file_content.decoded_content.decode(
                             "utf-8", errors="replace"
                         )
+                        if (len(full_text) / 2 - len(full_text) / 4) <= 500 and len(
+                            full_text
+                        ) > 0:
+                            start_offset = len(full_text) / 2 - len(full_text) / 4
+                            end_offset = len(full_text) / 2 + len(full_text) / 4
+                        elif len(full_text) == 0:
+                            start_offset = 0
+                            end_offset = 0
+                        else:
+                            start_offset = len(full_text) / 2 - 500
+                            end_offset = len(full_text) / 2 + 500
 
                         # Extract the desired text range
-                        extracted_text = full_text[start_offset:end_offset]
+                        start = int(start_offset)
+                        end = int(end_offset)
+                        extracted_text = full_text[start:end]
 
                         # Create the output folder if it doesn't exist
                         os.makedirs(output_folder, exist_ok=True)
@@ -92,18 +105,24 @@ def extract_and_save_text_files(
         print(f"Error in extract_and_save_text_files: {e}")
 
 
+def select_files(base_folder_contents):
+    text_files = [
+        f for f in base_folder_contents if f.type == "file" and f.name.endswith(".txt")
+    ]
+    num_files = 3 if len(text_files) > 5 else 1
+    return random.sample(text_files, min(num_files, len(text_files)))
+
+
 if __name__ == "__main__":
     # Your GitHub personal access token (replace with your actual token)
-    github_token = "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"
+    github_token = "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"
     # Example usage:
     organization_name = "OpenPecha-Data"
 
     # Example usage:
     csv_file_path = "../../data/opf_catalog.csv"
     num_rows_to_select = 50
-    start_offset = 1500
-    end_offset = 3000
-    output_folder = "../../data/output"  # Folder to save the extracted text files
+    output_folder = "../../data/output1"  # Folder to save the extracted text files
 
     selected_pecha_ids = select_random_pecha_ids(csv_file_path, num_rows_to_select)
     if selected_pecha_ids:
@@ -115,8 +134,6 @@ if __name__ == "__main__":
             organization_name,
             github_token,
             selected_pecha_ids,
-            start_offset,
-            end_offset,
             output_folder,
         )
     else:

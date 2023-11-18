@@ -1,0 +1,30 @@
+{
+    "I00128C51-2E99.txt": {
+        "NON_WORD": "NOT TIBETAN",
+        "TOTAL_TOKENS": 0
+    },
+    "D2EDFE59E-d033.txt": {
+        "NON_WORD": 4,
+        "TOTAL_TOKENS": 199
+    },
+    "D3C20A74B-6636.txt": {
+        "NON_WORD": 1,
+        "TOTAL_TOKENS": 199
+    },
+    "I94BBDB91-I2PD19282.txt": {
+        "NON_WORD": 1,
+        "TOTAL_TOKENS": 161
+    },
+    "I99460F96-I3CN25910.txt": {
+        "NON_WORD": 0,
+        "TOTAL_TOKENS": 211
+    },
+    "O65196E66-E9AE.txt": {
+        "NON_WORD": 1,
+        "TOTAL_TOKENS": 189
+    },
+    "O8F338825-53B3.txt": {
+        "NON_WORD": 3,
+        "TOTAL_TOKENS": 215
+    }
+}
