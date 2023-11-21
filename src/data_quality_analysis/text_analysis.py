@@ -51,7 +51,7 @@ if __name__ == "__main__":
     tibetan_regex = re.compile(r"[\u0F00-\u0FFF]+")
     wt = WordTokenizer(config=config)
     # Specify the directory containing text files
-    text_files_directory = "../../data/output1"
+    text_files_directory = "../../data/output2"
 
     # Create a dictionary to store results
     results = {}

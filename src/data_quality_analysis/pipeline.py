@@ -5,7 +5,7 @@ import random
 import re
 from pathlib import Path
 
-from botok import WordTokenizer
+from botok import TSEK, WordTokenizer
 from botok.config import Config
 from github import Github
 
@@ -108,28 +108,75 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
         return {
             "NON_WORD": "EMPTY FILE",
             "TOTAL_TOKENS": 0,
+            "OCR_ERROR_COUNT": "NOT CHECKED",
+            "TOKENS": [],  # Empty token list for consistency
+            "TEXT_QUALITY": "",  # Assign a quality label
+            "ERROR_LOCATIONS": [],  # Empty list for error locations
+            "LANGUAGE": "EMPTY FILE",
         }  # Return a dictionary with "NON_WORD" and 0 count
 
     if not tibetan_regex.search(text):  # Check if the text contains Tibetan characters
+        cjk_regex = re.compile(r"[\u2e80-\ufaff\ufe30-\ufe4f\u20000-\u2fa1f]+")
+        latin_regex = re.compile(r"[\u0020-\u036f\u1e00-\u20cf]+")
+        if cjk_regex.search(text):
+            lang = "CJK"
+        elif latin_regex.search(text):
+            lang = "LATIN"
+        else:
+            lang = "OTHER"
         logging.info(f"Skipped non-Tibetan file: {pecha_id}-{pecha_sub_file}")
         return {
             "NON_WORD": "NOT TIBETAN",
-            "TOTAL_TOKENS": 0,
+            "TOTAL_TOKENS": "NOT TOKENIZE OTHER LANG",
+            "OCR_ERROR_COUNT": "NOT CHECKED",
+            "TOKENS": [],  # Empty token list for consistency
+            "TEXT_QUALITY": "",  # Assign a quality label
+            "ERROR_LOCATIONS": [],  # Empty list for error locations
+            "LANGUAGE": lang,
         }  # Return a dictionary with "NON_WORD" and 0 count
 
     tokens = wt.tokenize(text, split_affixes=False)
-
+    ocr_error = 0
     nonword_count = 0
-    for token in tokens[1:-1]:
+    error_locations = []
+
+    for i, token in enumerate(tokens[1:-1], start=1):
+        if token.chunk_type == "PUNCT":
+            continue
         if token.pos == "NON_WORD":
             nonword_count += 1
+        if token.text != token.text_cleaned:
+            if token.text + TSEK == token.text_cleaned:
+                ocr_error += 1
+                error_locations.append(i)  # Add error location
+                continue
+            print(token.text, token.text_cleaned)
 
-    return {"NON_WORD": nonword_count, "TOTAL_TOKENS": len(tokens) - 2}
+    # Determine text quality based on criteria (you can customize this)
+    text_quality = (
+        "Excellent"
+        if ocr_error == 0 and nonword_count == 0
+        else "Good"
+        if ocr_error <= 5
+        else "Fair"
+        if ocr_error <= 10
+        else "Poor"
+    )
+
+    return {
+        "NON_WORD": nonword_count,
+        "TOTAL_TOKENS": len(tokens) - 2,
+        "OCR_ERROR_COUNT": ocr_error,
+        "TOKENS": [token.text for token in tokens[1:-1]],  # Extract text from tokens
+        "TEXT_QUALITY": text_quality,
+        "ERROR_LOCATIONS": error_locations,
+        "LANGUAGE": "TIBETAN",
+    }
 
 
 if __name__ == "__main__":
     # Your GitHub personal access token (replace with your actual token)
-    github_token = "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"
+    github_token = "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"
     # Example usage:
     organization_name = "OpenPecha-Data"
     # Configure the logging settings
@@ -168,6 +215,7 @@ if __name__ == "__main__":
             print(cnt, f"File: {file_name}")
             print(f"Non-word Count: {nonword_dict['NON_WORD']}")
             print(f"TOKEN COUNT TOTAL: {nonword_dict['TOTAL_TOKENS']}")
+            print(f"OCR_ERROR_COUNT: {nonword_dict['OCR_ERROR_COUNT']}")
         # Specify the file name where the JSON data will be written
         file_name = "../../data/pecha_data.json"
 
