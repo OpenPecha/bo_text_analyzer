@@ -12,7 +12,7 @@ def get_tokens(wt, text):
 if __name__ == "__main__":
     config = Config(dialect_name="general", base_path=Path.home())
     wt = WordTokenizer(config=config)
-    text = """ལ་ལ་ལ་་ལ་ལ་ལ་བ་ཡོདལ"""
+    text = """ལ་ལ་ལ་་ལ་ལ་ལ་བ་ཡོདལ་འདོད་པའི་"""
     c = Chunks(text)
     chunks = c.make_chunks()
     non_word_count = 0
@@ -34,5 +34,7 @@ if __name__ == "__main__":
         if token.pos == "NON_WORD":
             non_word_count += 1
         if token.text != token.text_unaffixed:
-            affixed_count += 1
-    print(ocr_error, non_word_count, affixed_count, punc_count, len(chunks))
+            val = token.senses
+            if val[0]["affixed"] is True:
+                affixed_count += 1
+    print(ocr_error, non_word_count, affixed_count, punc_count, len(chunks), len(text))
