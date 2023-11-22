@@ -156,7 +156,9 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
                 continue
             print(token.text, token.text_cleaned)
         if token.text != token.text_unaffixed:
-            affixed_count += 1
+            val = token.senses
+            if val[0]["affixed"] is True:
+                affixed_count += 1
 
     # Determine text quality based on criteria (you can customize this)
     text_quality = (
