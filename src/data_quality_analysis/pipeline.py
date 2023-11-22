@@ -5,7 +5,7 @@ import random
 import re
 from pathlib import Path
 
-from botok import TSEK, WordTokenizer
+from botok import TSEK, Chunks, WordTokenizer
 from botok.config import Config
 from github import Github
 
@@ -138,19 +138,25 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
     tokens = wt.tokenize(text, split_affixes=False)
     ocr_error = 0
     nonword_count = 0
+    affixed_count = 0
     error_locations = []
-
+    c = Chunks(text)
+    chunks = c.make_chunks()
     for i, token in enumerate(tokens[1:-1], start=1):
         if token.chunk_type == "PUNCT":
             continue
         if token.pos == "NON_WORD":
             nonword_count += 1
         if token.text != token.text_cleaned:
+            ocr_error += 1
+            error_locations.append(i)  # Add error location
             if token.text + TSEK == token.text_cleaned:
-                ocr_error += 1
-                error_locations.append(i)  # Add error location
+                ocr_error -= 1
+                error_locations.remove(i)  # Add error location
                 continue
             print(token.text, token.text_cleaned)
+        if token.text != token.text_unaffixed:
+            affixed_count += 1
 
     # Determine text quality based on criteria (you can customize this)
     text_quality = (
@@ -171,12 +177,15 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
         "TEXT_QUALITY": text_quality,
         "ERROR_LOCATIONS": error_locations,
         "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": len(chunks),
+        "CHARACTER_COUNT": len(text),
+        "AFFIXED_WORD_COUNT": affixed_count,
     }
 
 
 if __name__ == "__main__":
     # Your GitHub personal access token (replace with your actual token)
-    github_token = "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"
+    github_token = "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"
     # Example usage:
     organization_name = "OpenPecha-Data"
     # Configure the logging settings
@@ -194,7 +203,7 @@ if __name__ == "__main__":
     results = {}
     # Example usage:
     csv_file_path = "../../data/opf_catalog.csv"
-    num_rows_to_select = 10
+    num_rows_to_select = 5
 
     selected_pecha_ids = select_random_pecha_ids(csv_file_path, num_rows_to_select)
     if selected_pecha_ids:
