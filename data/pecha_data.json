@@ -1,82 +1,199 @@
 {
-    "I480A00A6-4115.txt": {
-        "NON_WORD": "NOT TIBETAN",
-        "TOTAL_TOKENS": "NOT TOKENIZE OTHER LANG",
-        "OCR_ERROR_COUNT": "NOT CHECKED",
-        "TEXT_QUALITY": "",
-        "ERROR_LOCATIONS": [],
-        "LANGUAGE": "CJK"
-    },
-    "D0CB8C865-ff5b.txt": {
-        "NON_WORD": 29,
+    "DF4CD4E08-4cff.txt": {
+        "NON_WORD": 35,
         "NON_WORD_TEXT": [
-            "བྷྲ་",
-            "བྷྲ་",
-            "བྷྲ་\n",
-            "བྷྲ་",
-            "ཛྱེ་",
-            "ཧྱེ་",
+            "འབེེབས",
+            "གྷ་",
+            "ཀཪྵ་",
+            "གྷ ཡིག་",
+            "རྩགྷ་",
+            "གྷ་",
             "སྭཱ་",
             "ཧཱ",
-            "བྷྲ་",
-            "ནེར་",
-            "བྷྲ་",
-            "བྷྲ་",
-            "བྷྲ་",
-            "ནེར་\n",
-            "བྷྲ་",
-            "བྷྲ་",
-            "བྷྲ་",
-            "བྷྲ་\n",
-            "བྷྲ་",
-            "ཛྱེ་",
-            "ཨུརྣེ་",
+            "གྷ་",
+            "གྷ་",
+            "གྷ་",
+            "གྷ་",
+            "གྷ་",
+            "གྷ་",
+            "གྷ་",
+            "གྷ་",
+            "གྷ་",
+            "གྷ་པ་",
             "སྭཱ་",
             "ཧཱ",
-            "ཀིནྣི་",
-            "ཀནྣི་",
-            "གྷཎྜ་",
-            "ཎ་",
+            "ཏྲ",
+            "གྷ་",
+            "གྷ་",
+            "གྷ་",
             "སྭཱ་",
-            "ཧཱ"
+            "ཧཱ",
+            "ལཞག་",
+            "སྟེལབཞག་",
+            "ནིབུམ་པ་",
+            "འཁྱེལ",
+            "བུམཆུ་",
+            "དེབཏུང་་\n",
+            "ཕོམོའིརྟེན་",
+            "ཕོརྟགསསྲིདཔའི་་\n",
+            "དེའིགཞུག"
         ],
-        "TOTAL_TOKENS": 239,
-        "OCR_ERROR_COUNT": 21,
+        "TOTAL_TOKENS": 226,
+        "OCR_ERROR_COUNT": 14,
+        "OCR_ERROR_COUNT_RATIO": 0.061946902654867256,
         "TEXT_QUALITY": "Poor",
-        "ERROR_LOCATIONS": [
-            24,
-            77,
-            90,
-            154,
-            219,
-            225,
-            291,
-            359,
-            435,
-            473,
-            509,
-            570,
-            626,
-            689,
-            751,
-            810,
-            815,
-            839,
-            869,
-            893,
-            949
+        "OCR_ERROR_LOCATIONS": [
+            [
+                30,
+                33
+            ],
+            [
+                90,
+                104
+            ],
+            [
+                156,
+                174
+            ],
+            [
+                271,
+                278
+            ],
+            [
+                293,
+                301
+            ],
+            [
+                372,
+                376
+            ],
+            [
+                513,
+                524
+            ],
+            [
+                576,
+                583
+            ],
+            [
+                583,
+                591
+            ],
+            [
+                644,
+                649
+            ],
+            [
+                699,
+                709
+            ],
+            [
+                777,
+                786
+            ],
+            [
+                847,
+                854
+            ],
+            [
+                905,
+                921
+            ]
         ],
         "LANGUAGE": "TIBETAN",
-        "CHUNK_SIZE": 292,
+        "CHUNK_SIZE": 272,
         "CHARACTER_COUNT": 1000,
-        "AFFIXED_WORD_COUNT": 22
+        "AFFIXED_WORD_COUNT": 15
     },
-    "IAB1B2CD2-4682.txt": {
-        "NON_WORD": "NOT TIBETAN",
-        "TOTAL_TOKENS": "NOT TOKENIZE OTHER LANG",
-        "OCR_ERROR_COUNT": "NOT CHECKED",
-        "TEXT_QUALITY": "",
-        "ERROR_LOCATIONS": [],
-        "LANGUAGE": "CJK"
+    "I2AC46E65-2e63.txt": {
+        "NON_WORD": 2,
+        "NON_WORD_TEXT": [
+            "དྷི་",
+            "སཏྭ་"
+        ],
+        "TOTAL_TOKENS": 191,
+        "OCR_ERROR_COUNT": 5,
+        "OCR_ERROR_COUNT_RATIO": 0.02617801047120419,
+        "TEXT_QUALITY": "Fair",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                479,
+                482
+            ],
+            [
+                553,
+                558
+            ],
+            [
+                745,
+                749
+            ],
+            [
+                905,
+                909
+            ],
+            [
+                958,
+                970
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 259,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 32
+    },
+    "I10A4F004-3C8A.txt": {
+        "NON_WORD": 1,
+        "NON_WORD_TEXT": [
+            "དུའོ"
+        ],
+        "TOTAL_TOKENS": 200,
+        "OCR_ERROR_COUNT": 3,
+        "OCR_ERROR_COUNT_RATIO": 0.015,
+        "TEXT_QUALITY": "Good",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                785,
+                788
+            ],
+            [
+                785,
+                788
+            ],
+            [
+                938,
+                941
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 284,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 19
+    },
+    "I8A07A1A1-1F19.txt": {
+        "NON_WORD": 1,
+        "NON_WORD_TEXT": [
+            "ཏཾ་"
+        ],
+        "TOTAL_TOKENS": 208,
+        "OCR_ERROR_COUNT": 0,
+        "OCR_ERROR_COUNT_RATIO": 0.0,
+        "TEXT_QUALITY": "Good",
+        "OCR_ERROR_LOCATIONS": [],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 276,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 37
+    },
+    "OE818482A-68AA.txt": {
+        "NON_WORD": "NOT APPLICBLE",
+        "TOTAL_TOKENS": "NOT APPLICABLE",
+        "OCR_ERROR_COUNT": "NOT APPLICABLE",
+        "TEXT_QUALITY": "NOT APPLICABLE",
+        "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
+        "LANGUAGE": "CJK",
+        "CHUNK_SIZE": "NOT APPLICABLE",
+        "CHARACTER_COUNT": "NOT APPLICABLE",
+        "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
     }
 }

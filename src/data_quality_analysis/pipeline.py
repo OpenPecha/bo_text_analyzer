@@ -106,12 +106,15 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
         # Check if the text is empty or contains only whitespace
         logging.info(f"Empty file: {pecha_id}-{pecha_sub_file}")
         return {
-            "NON_WORD": "EMPTY FILE",
-            "TOTAL_TOKENS": 0,
-            "OCR_ERROR_COUNT": "NOT CHECKED",
-            "TEXT_QUALITY": "",  # Assign a quality label
-            "ERROR_LOCATIONS": [],  # Empty list for error locations
-            "LANGUAGE": "EMPTY FILE",
+            "NON_WORD": "NOT APPLICBLE",
+            "TOTAL_TOKENS": "NOT APPLICABLE",
+            "OCR_ERROR_COUNT": "NOT APPLICABLE",
+            "TEXT_QUALITY": "NOT APPLICABLE",  # Assign a quality label
+            "ERROR_LOCATIONS": "NOT APPLICABLE",  # Empty list for error locations
+            "LANGUAGE": "NOT APPLICABLE",
+            "CHUNK_SIZE": "NOT APPLICABLE",
+            "CHARACTER_COUNT": "NOT APPLICABLE",
+            "AFFIXED_WORD_COUNT": "NOT APPLICABLE",
         }  # Return a dictionary with "NON_WORD" and 0 count
 
     if not tibetan_regex.search(text):  # Check if the text contains Tibetan characters
@@ -125,12 +128,15 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
             lang = "OTHER"
         logging.info(f"Skipped non-Tibetan file: {pecha_id}-{pecha_sub_file}")
         return {
-            "NON_WORD": "NOT TIBETAN",
-            "TOTAL_TOKENS": "NOT TOKENIZE OTHER LANG",
-            "OCR_ERROR_COUNT": "NOT CHECKED",
-            "TEXT_QUALITY": "",  # Assign a quality label
-            "ERROR_LOCATIONS": [],  # Empty list for error locations
+            "NON_WORD": "NOT APPLICBLE",
+            "TOTAL_TOKENS": "NOT APPLICABLE",
+            "OCR_ERROR_COUNT": "NOT APPLICABLE",
+            "TEXT_QUALITY": "NOT APPLICABLE",  # Assign a quality label
+            "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
             "LANGUAGE": lang,
+            "CHUNK_SIZE": "NOT APPLICABLE",
+            "CHARACTER_COUNT": "NOT APPLICABLE",
+            "AFFIXED_WORD_COUNT": "NOT APPLICABLE",
         }  # Return a dictionary with "NON_WORD" and 0 count
 
     tokens = wt.tokenize(text, split_affixes=False)
@@ -152,24 +158,24 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
             ocr_error += 1
             # Append the error index in the original text
             error_index += text[error_index:].find(token.text)
-            error_locations.append(error_index)
+            error_locations.append((error_index, error_index + len(token.text)))
             if token.text + TSEK == token.text_cleaned:
                 ocr_error -= 1
-                error_locations.remove(error_index)
+                error_locations.remove((error_index, error_index + len(token.text)))
                 continue
         if token.text != token.text_unaffixed:
             val = token.senses
             if val is not None and "affixed" in val[0] and val[0]["affixed"] is True:
                 affixed_count += 1
-
+    ocr_error_ratio = ocr_error / (len(tokens) - 2)
     # Determine text quality based on criteria (you can customize this)
     text_quality = (
         "Excellent"
-        if ocr_error == 0 and nonword_count == 0
+        if ocr_error_ratio < 0.001 and nonword_count == 0
         else "Good"
-        if ocr_error <= 5
+        if ocr_error_ratio < 0.020
         else "Fair"
-        if ocr_error <= 10
+        if ocr_error_ratio < 0.040
         else "Poor"
     )
 
@@ -178,8 +184,9 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
         "NON_WORD_TEXT": nonword_text,
         "TOTAL_TOKENS": len(tokens) - 2,
         "OCR_ERROR_COUNT": ocr_error,
+        "OCR_ERROR_COUNT_RATIO": ocr_error_ratio,
         "TEXT_QUALITY": text_quality,
-        "ERROR_LOCATIONS": error_locations,
+        "OCR_ERROR_LOCATIONS": error_locations,
         "LANGUAGE": "TIBETAN",
         "CHUNK_SIZE": len(chunks),
         "CHARACTER_COUNT": len(text),
@@ -189,7 +196,7 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
 
 if __name__ == "__main__":
     # Your GitHub personal access token (replace with your actual token)
-    github_token = "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"
+    github_token = "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"
     # Example usage:
     organization_name = "OpenPecha-Data"
     # Configure the logging settings
@@ -206,7 +213,9 @@ if __name__ == "__main__":
     # Create a dictionary to store results
     results = {}
     # Example usage:
-    csv_file_path = "../../data/opf_catalog.csv"
+    csv_file_path = (
+        "/home/gangagyatso/Desktop/project4/pechadata_analysis/data/opf_catalog.csv"
+    )
     num_rows_to_select = 5
 
     selected_pecha_ids = select_random_pecha_ids(csv_file_path, num_rows_to_select)
