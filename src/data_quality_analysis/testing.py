@@ -12,7 +12,7 @@ def get_tokens(wt, text):
 if __name__ == "__main__":
     config = Config(dialect_name="general", base_path=Path.home())
     wt = WordTokenizer(config=config)
-    text = """ལ་ལ་ལ་་ལ་ལ་ལ་བ་ཡོདལ་འདོད་པའི་"""
+    text = "ལ་་ལ་ལ་ལ་ལ་བ་ཡོད།"
     c = Chunks(text)
     chunks = c.make_chunks()
     non_word_count = 0

@@ -109,7 +109,6 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
             "NON_WORD": "EMPTY FILE",
             "TOTAL_TOKENS": 0,
             "OCR_ERROR_COUNT": "NOT CHECKED",
-            "TOKENS": [],  # Empty token list for consistency
             "TEXT_QUALITY": "",  # Assign a quality label
             "ERROR_LOCATIONS": [],  # Empty list for error locations
             "LANGUAGE": "EMPTY FILE",
@@ -129,7 +128,6 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
             "NON_WORD": "NOT TIBETAN",
             "TOTAL_TOKENS": "NOT TOKENIZE OTHER LANG",
             "OCR_ERROR_COUNT": "NOT CHECKED",
-            "TOKENS": [],  # Empty token list for consistency
             "TEXT_QUALITY": "",  # Assign a quality label
             "ERROR_LOCATIONS": [],  # Empty list for error locations
             "LANGUAGE": lang,
@@ -138,26 +136,30 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
     tokens = wt.tokenize(text, split_affixes=False)
     ocr_error = 0
     nonword_count = 0
+    nonword_text = []
     affixed_count = 0
     error_locations = []
     c = Chunks(text)
     chunks = c.make_chunks()
+    error_index = 0  # Add this variable to track the index in the original text
     for i, token in enumerate(tokens[1:-1], start=1):
         if token.chunk_type == "PUNCT":
             continue
         if token.pos == "NON_WORD":
+            nonword_text.append(token.text)
             nonword_count += 1
         if token.text != token.text_cleaned:
             ocr_error += 1
-            error_locations.append(i)  # Add error location
+            # Append the error index in the original text
+            error_index += text[error_index:].find(token.text)
+            error_locations.append(error_index)
             if token.text + TSEK == token.text_cleaned:
                 ocr_error -= 1
-                error_locations.remove(i)  # Add error location
+                error_locations.remove(error_index)
                 continue
-            print(token.text, token.text_cleaned)
         if token.text != token.text_unaffixed:
             val = token.senses
-            if val[0]["affixed"] is True:
+            if val is not None and "affixed" in val[0] and val[0]["affixed"] is True:
                 affixed_count += 1
 
     # Determine text quality based on criteria (you can customize this)
@@ -173,9 +175,9 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
 
     return {
         "NON_WORD": nonword_count,
+        "NON_WORD_TEXT": nonword_text,
         "TOTAL_TOKENS": len(tokens) - 2,
         "OCR_ERROR_COUNT": ocr_error,
-        "TOKENS": [token.text for token in tokens[1:-1]],  # Extract text from tokens
         "TEXT_QUALITY": text_quality,
         "ERROR_LOCATIONS": error_locations,
         "LANGUAGE": "TIBETAN",
@@ -187,7 +189,7 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
 
 if __name__ == "__main__":
     # Your GitHub personal access token (replace with your actual token)
-    github_token = "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"
+    github_token = "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"
     # Example usage:
     organization_name = "OpenPecha-Data"
     # Configure the logging settings
