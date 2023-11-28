@@ -149,21 +149,26 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
     chunks = c.make_chunks()
     error_index = 0  # Add this variable to track the index in the original text
     for i, token in enumerate(tokens[1:-1], start=1):
+        # Strip out newline characters from token.text
+        cleaned_token_text = token.text.replace("\n", "")
+
         if token.chunk_type == "PUNCT":
             continue
         if token.pos == "NON_WORD":
-            nonword_text.append(token.text)
+            nonword_text.append(cleaned_token_text)
             nonword_count += 1
-        if token.text != token.text_cleaned:
+        if cleaned_token_text != token.text_cleaned:
             ocr_error += 1
             # Append the error index in the original text
-            error_index += text[error_index:].find(token.text)
-            error_locations.append((error_index, error_index + len(token.text)))
-            if token.text + TSEK == token.text_cleaned:
+            error_index += text[error_index:].find(cleaned_token_text)
+            error_locations.append((error_index, error_index + len(cleaned_token_text)))
+            if cleaned_token_text + TSEK == token.text_cleaned:
                 ocr_error -= 1
-                error_locations.remove((error_index, error_index + len(token.text)))
+                error_locations.remove(
+                    (error_index, error_index + len(cleaned_token_text))
+                )
                 continue
-        if token.text != token.text_unaffixed:
+        if cleaned_token_text != token.text_unaffixed:
             val = token.senses
             if val is not None and "affixed" in val[0] and val[0]["affixed"] is True:
                 affixed_count += 1
@@ -196,7 +201,7 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
 
 if __name__ == "__main__":
     # Your GitHub personal access token (replace with your actual token)
-    github_token = "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"
+    github_token = "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"
     # Example usage:
     organization_name = "OpenPecha-Data"
     # Configure the logging settings
@@ -213,9 +218,7 @@ if __name__ == "__main__":
     # Create a dictionary to store results
     results = {}
     # Example usage:
-    csv_file_path = (
-        "/home/gangagyatso/Desktop/project4/pechadata_analysis/data/opf_catalog.csv"
-    )
+    csv_file_path = "../../data/opf_catalog.csv"
     num_rows_to_select = 5
 
     selected_pecha_ids = select_random_pecha_ids(csv_file_path, num_rows_to_select)
