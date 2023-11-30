@@ -101,6 +101,11 @@ def select_files(base_folder_contents):
     return random.sample(text_files, min(num_files, len(text_files)))
 
 
+def count_lines(text):
+    # Split the text into lines and count them
+    return len(text.splitlines())
+
+
 def tokenize_text(text, pecha_id, pecha_sub_file):
     if not text.strip():
         # Check if the text is empty or contains only whitespace
@@ -173,6 +178,7 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
             if val is not None and "affixed" in val[0] and val[0]["affixed"] is True:
                 affixed_count += 1
     ocr_error_ratio = ocr_error / (len(tokens) - 2)
+    total_lines = count_lines(text)
     # Determine text quality based on criteria (you can customize this)
     text_quality = (
         "Excellent"
@@ -196,12 +202,13 @@ def tokenize_text(text, pecha_id, pecha_sub_file):
         "CHUNK_SIZE": len(chunks),
         "CHARACTER_COUNT": len(text),
         "AFFIXED_WORD_COUNT": affixed_count,
+        "NUMBER OF LINES IN TEXT": total_lines,
     }
 
 
 if __name__ == "__main__":
     # Your GitHub personal access token (replace with your actual token)
-    github_token = "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"
+    github_token = "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"
     # Example usage:
     organization_name = "OpenPecha-Data"
     # Configure the logging settings
@@ -218,8 +225,10 @@ if __name__ == "__main__":
     # Create a dictionary to store results
     results = {}
     # Example usage:
-    csv_file_path = "../../data/opf_catalog.csv"
-    num_rows_to_select = 5
+    csv_file_path = (
+        "/home/gangagyatso/Desktop/project4/pechadata_analysis/data/opf_catalog.csv"
+    )
+    num_rows_to_select = 30
 
     selected_pecha_ids = select_random_pecha_ids(csv_file_path, num_rows_to_select)
     if selected_pecha_ids:
@@ -242,7 +251,9 @@ if __name__ == "__main__":
             print(f"TOKEN COUNT TOTAL: {nonword_dict['TOTAL_TOKENS']}")
             print(f"OCR_ERROR_COUNT: {nonword_dict['OCR_ERROR_COUNT']}")
         # Specify the file name where the JSON data will be written
-        file_name = "../../data/pecha_data.json"
+        file_name = (
+            "/home/gangagyatso/Desktop/project4/pechadata_analysis/data/pecha_data.json"
+        )
 
         # Writing the dictionary to a JSON file
         with open(file_name, "w", encoding="utf-8") as file:

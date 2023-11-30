@@ -2,6 +2,28 @@ from pathlib import Path
 
 from botok import TSEK, Chunks, WordTokenizer
 from botok.config import Config
+from langdetect import DetectorFactory, detect
+
+DetectorFactory.seed = 0  # To make language detection more deterministic
+
+
+def detect_languages_in_text(text):
+    if not text.strip():
+        return []
+
+    # Initialize a set to hold unique languages
+    language_set = set()
+
+    # Splitting the text into sentences for language detection
+    for sentence in text.split("\n"):
+        try:
+            lang = detect(sentence.strip())
+            language_set.add(lang)
+        except Exception as e:
+            print("detecction error ", e)  # Ignore errors in language detection
+
+    # Convert the set of languages to a list
+    return list(language_set)
 
 
 def get_tokens(wt, text):
@@ -12,7 +34,8 @@ def get_tokens(wt, text):
 if __name__ == "__main__":
     config = Config(dialect_name="general", base_path=Path.home())
     wt = WordTokenizer(config=config)
-    text = "ལ་་ལ་ལ་ལ\n་ལ་བ་ཡོད\n།\n"
+    text = "ལ་་ལ་ལ་ལ\n་ལ་བ་ཡོད\n།\ni am here\n斷般若波羅蜜"
+    detected_languages = detect_languages_in_text(text)
     c = Chunks(text)
     chunks = c.make_chunks()
     non_word_count = 0
@@ -21,6 +44,7 @@ if __name__ == "__main__":
     punc_count = 0
     tokens = get_tokens(wt, text)
     for token in tokens:
+
         print(token)
 
         # Replace newline characters in token.text with a space
@@ -54,4 +78,5 @@ if __name__ == "__main__":
         len(chunks),
         len(text),
         cleaned_token_text,
+        detected_languages,
     )
