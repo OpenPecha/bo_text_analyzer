@@ -1,191 +1,253 @@
 {
-    "DF4CD4E08-4cff.txt": {
-        "NON_WORD": 35,
+    "PF4075445-8a31.txt": {
+        "NON_WORD": 1,
         "NON_WORD_TEXT": [
-            "འབེེབས",
-            "གྷ་",
-            "ཀཪྵ་",
-            "གྷ ཡིག་",
-            "རྩགྷ་",
-            "གྷ་",
-            "སྭཱ་",
-            "ཧཱ",
-            "གྷ་",
-            "གྷ་",
-            "གྷ་",
-            "གྷ་",
-            "གྷ་",
-            "གྷ་",
-            "གྷ་",
-            "གྷ་",
-            "གྷ་",
-            "གྷ་པ་",
-            "སྭཱ་",
-            "ཧཱ",
-            "ཏྲ",
-            "གྷ་",
-            "གྷ་",
-            "གྷ་",
-            "སྭཱ་",
-            "ཧཱ",
-            "ལཞག་",
-            "སྟེལབཞག་",
-            "ནིབུམ་པ་",
-            "འཁྱེལ",
-            "བུམཆུ་",
-            "དེབཏུང་་\n",
-            "ཕོམོའིརྟེན་",
-            "ཕོརྟགསསྲིདཔའི་་\n",
-            "དེའིགཞུག"
+            "ཤཱནྟི་"
         ],
-        "TOTAL_TOKENS": 226,
-        "OCR_ERROR_COUNT": 14,
-        "OCR_ERROR_COUNT_RATIO": 0.061946902654867256,
-        "TEXT_QUALITY": "Poor",
-        "OCR_ERROR_LOCATIONS": [
-            [
-                30,
-                33
-            ],
-            [
-                90,
-                104
-            ],
-            [
-                156,
-                174
-            ],
-            [
-                271,
-                278
-            ],
-            [
-                293,
-                301
-            ],
-            [
-                372,
-                376
-            ],
-            [
-                513,
-                524
-            ],
-            [
-                576,
-                583
-            ],
-            [
-                583,
-                591
-            ],
-            [
-                644,
-                649
-            ],
-            [
-                699,
-                709
-            ],
-            [
-                777,
-                786
-            ],
-            [
-                847,
-                854
-            ],
-            [
-                905,
-                921
-            ]
-        ],
-        "LANGUAGE": "TIBETAN",
-        "CHUNK_SIZE": 272,
-        "CHARACTER_COUNT": 1000,
-        "AFFIXED_WORD_COUNT": 15
-    },
-    "I2AC46E65-2e63.txt": {
-        "NON_WORD": 2,
-        "NON_WORD_TEXT": [
-            "དྷི་",
-            "སཏྭ་"
-        ],
-        "TOTAL_TOKENS": 191,
+        "TOTAL_TOKENS": 195,
         "OCR_ERROR_COUNT": 5,
-        "OCR_ERROR_COUNT_RATIO": 0.02617801047120419,
+        "OCR_ERROR_COUNT_RATIO": 0.02564102564102564,
         "TEXT_QUALITY": "Fair",
         "OCR_ERROR_LOCATIONS": [
             [
-                479,
-                482
+                62,
+                65
             ],
             [
-                553,
-                558
+                62,
+                65
             ],
             [
-                745,
-                749
+                247,
+                251
             ],
             [
-                905,
-                909
+                262,
+                265
             ],
             [
-                958,
-                970
+                643,
+                646
             ]
         ],
         "LANGUAGE": "TIBETAN",
-        "CHUNK_SIZE": 259,
+        "CHUNK_SIZE": 270,
         "CHARACTER_COUNT": 1000,
-        "AFFIXED_WORD_COUNT": 32
+        "AFFIXED_WORD_COUNT": 29,
+        "NUMBER OF LINES IN TEXT": 8
     },
-    "I10A4F004-3C8A.txt": {
-        "NON_WORD": 1,
+    "I322B2B23-B255.txt": {
+        "NON_WORD": 35,
         "NON_WORD_TEXT": [
-            "དུའོ"
+            "མདུས་",
+            "སྤྲོལ་",
+            "འོངོ་",
+            "བསྐཏོ",
+            "བཀོདོ༌",
+            "རཝའགྱིག་",
+            "དི་",
+            "ཞངས་",
+            "ྱས་",
+            "དཀྱིནོ་",
+            "ཧྥང་",
+            "ཝན་",
+            "རྙེ",
+            "ཚིུ་",
+            "གའ་",
+            "མཛ",
+            "ཆོསཾ་",
+            "ཝནྟིཏ་",
+            "འ",
+            "པལན་",
+            "མཆོགོ",
+            "གསོའི་",
+            "མཆོདོ",
+            "ངསཧས་",
+            "ཡཚོད་",
+            "སོཞེས",
+            "ྱས་",
+            "མཐིན་",
+            "རྫསྲིད་",
+            "ཞནས་",
+            "མཚནོ་",
+            "ཀུནྟི་",
+            "ཚདོ་",
+            "ཞིན་",
+            "ཨལྔ་"
         ],
-        "TOTAL_TOKENS": 200,
-        "OCR_ERROR_COUNT": 3,
-        "OCR_ERROR_COUNT_RATIO": 0.015,
-        "TEXT_QUALITY": "Good",
+        "TOTAL_TOKENS": 255,
+        "OCR_ERROR_COUNT": 40,
+        "OCR_ERROR_COUNT_RATIO": 0.1568627450980392,
+        "TEXT_QUALITY": "Poor",
         "OCR_ERROR_LOCATIONS": [
             [
-                785,
-                788
+                52,
+                53
             ],
             [
-                785,
-                788
+                73,
+                77
             ],
             [
-                938,
-                941
+                79,
+                85
+            ],
+            [
+                156,
+                158
+            ],
+            [
+                168,
+                170
+            ],
+            [
+                204,
+                205
+            ],
+            [
+                257,
+                259
+            ],
+            [
+                294,
+                295
+            ],
+            [
+                319,
+                321
+            ],
+            [
+                349,
+                350
+            ],
+            [
+                402,
+                403
+            ],
+            [
+                408,
+                409
+            ],
+            [
+                448,
+                449
+            ],
+            [
+                451,
+                454
+            ],
+            [
+                459,
+                460
+            ],
+            [
+                461,
+                462
+            ],
+            [
+                470,
+                471
+            ],
+            [
+                474,
+                477
+            ],
+            [
+                473,
+                475
+            ],
+            [
+                485,
+                488
+            ],
+            [
+                484,
+                486
+            ],
+            [
+                511,
+                517
+            ],
+            [
+                581,
+                586
+            ],
+            [
+                606,
+                607
+            ],
+            [
+                622,
+                623
+            ],
+            [
+                642,
+                651
+            ],
+            [
+                661,
+                662
+            ],
+            [
+                682,
+                685
+            ],
+            [
+                771,
+                776
+            ],
+            [
+                796,
+                804
+            ],
+            [
+                818,
+                820
+            ],
+            [
+                878,
+                880
+            ],
+            [
+                913,
+                920
+            ],
+            [
+                923,
+                924
+            ],
+            [
+                924,
+                928
+            ],
+            [
+                929,
+                931
+            ],
+            [
+                957,
+                958
+            ],
+            [
+                961,
+                968
+            ],
+            [
+                968,
+                969
+            ],
+            [
+                976,
+                977
             ]
         ],
         "LANGUAGE": "TIBETAN",
-        "CHUNK_SIZE": 284,
+        "CHUNK_SIZE": 291,
         "CHARACTER_COUNT": 1000,
-        "AFFIXED_WORD_COUNT": 19
+        "AFFIXED_WORD_COUNT": 21,
+        "NUMBER OF LINES IN TEXT": 20
     },
-    "I8A07A1A1-1F19.txt": {
-        "NON_WORD": 1,
-        "NON_WORD_TEXT": [
-            "ཏཾ་"
-        ],
-        "TOTAL_TOKENS": 208,
-        "OCR_ERROR_COUNT": 0,
-        "OCR_ERROR_COUNT_RATIO": 0.0,
-        "TEXT_QUALITY": "Good",
-        "OCR_ERROR_LOCATIONS": [],
-        "LANGUAGE": "TIBETAN",
-        "CHUNK_SIZE": 276,
-        "CHARACTER_COUNT": 1000,
-        "AFFIXED_WORD_COUNT": 37
-    },
-    "OE818482A-68AA.txt": {
+    "I1DB2D973-1b96.txt": {
         "NON_WORD": "NOT APPLICBLE",
         "TOTAL_TOKENS": "NOT APPLICABLE",
         "OCR_ERROR_COUNT": "NOT APPLICABLE",
@@ -195,5 +257,1137 @@
         "CHUNK_SIZE": "NOT APPLICABLE",
         "CHARACTER_COUNT": "NOT APPLICABLE",
         "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
+    },
+    "DDFB5182C-dad5.txt": {
+        "NON_WORD": 16,
+        "NON_WORD_TEXT": [
+            "ཨཱཿ",
+            "ཧཱ་",
+            "ཧཱུཾ་",
+            "ཕཊ་",
+            "ཧཱུཾ་",
+            "ཨཱཿ",
+            "སྣབསམ་",
+            "སཟ་",
+            "ཐཱ་",
+            "ཎ་",
+            "སྭ་",
+            "བྷཱ་",
+            "ཨཱཏྨ་་་",
+            "ཀོ྅",
+            "ཧཾ",
+            "སྤྱོར་བ་"
+        ],
+        "TOTAL_TOKENS": 202,
+        "OCR_ERROR_COUNT": 10,
+        "OCR_ERROR_COUNT_RATIO": 0.04950495049504951,
+        "TEXT_QUALITY": "Poor",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                40,
+                46
+            ],
+            [
+                228,
+                229
+            ],
+            [
+                238,
+                244
+            ],
+            [
+                245,
+                252
+            ],
+            [
+                505,
+                513
+            ],
+            [
+                513,
+                514
+            ],
+            [
+                519,
+                532
+            ],
+            [
+                655,
+                660
+            ],
+            [
+                726,
+                733
+            ],
+            [
+                737,
+                739
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 276,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 30,
+        "NUMBER OF LINES IN TEXT": 17
+    },
+    "PDCFC45DD-Īśvarapratyabhijñāvimarśinī.txt": {
+        "NON_WORD": "NOT APPLICBLE",
+        "TOTAL_TOKENS": "NOT APPLICABLE",
+        "OCR_ERROR_COUNT": "NOT APPLICABLE",
+        "TEXT_QUALITY": "NOT APPLICABLE",
+        "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
+        "LANGUAGE": "CJK",
+        "CHUNK_SIZE": "NOT APPLICABLE",
+        "CHARACTER_COUNT": "NOT APPLICABLE",
+        "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
+    },
+    "O25B45847-2D40.txt": {
+        "NON_WORD": 12,
+        "NON_WORD_TEXT": [
+            "རེཀ་",
+            "ཧྥི་",
+            "ལིབ་",
+            "ཝི་",
+            "རེཀ་",
+            "ཧེམ་",
+            "ཧེམ་",
+            "ཧེམ་",
+            "ཝི་",
+            "ཧྥི་",
+            "ལིབ་",
+            "རེཀ་"
+        ],
+        "TOTAL_TOKENS": 262,
+        "OCR_ERROR_COUNT": 18,
+        "OCR_ERROR_COUNT_RATIO": 0.06870229007633588,
+        "TEXT_QUALITY": "Poor",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                15,
+                17
+            ],
+            [
+                47,
+                48
+            ],
+            [
+                109,
+                114
+            ],
+            [
+                156,
+                158
+            ],
+            [
+                183,
+                184
+            ],
+            [
+                230,
+                232
+            ],
+            [
+                257,
+                258
+            ],
+            [
+                280,
+                282
+            ],
+            [
+                359,
+                360
+            ],
+            [
+                532,
+                534
+            ],
+            [
+                559,
+                560
+            ],
+            [
+                576,
+                578
+            ],
+            [
+                613,
+                614
+            ],
+            [
+                624,
+                626
+            ],
+            [
+                656,
+                657
+            ],
+            [
+                672,
+                674
+            ],
+            [
+                688,
+                689
+            ],
+            [
+                822,
+                824
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 307,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 23,
+        "NUMBER OF LINES IN TEXT": 10
+    },
+    "D00599990-63c5.txt": {
+        "NON_WORD": 9,
+        "NON_WORD_TEXT": [
+            "བུདྷེ་་་",
+            "སྭ་",
+            "བྷཱ་",
+            "ཨཱཏྨ་",
+            "ཀོཕོསྙེ",
+            "ཧཾ",
+            "གཅིགས་",
+            "ཧཱུཾ་",
+            "ཧཱུཾ་"
+        ],
+        "TOTAL_TOKENS": 197,
+        "OCR_ERROR_COUNT": 8,
+        "OCR_ERROR_COUNT_RATIO": 0.04060913705583756,
+        "TEXT_QUALITY": "Poor",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                92,
+                100
+            ],
+            [
+                101,
+                107
+            ],
+            [
+                136,
+                137
+            ],
+            [
+                170,
+                181
+            ],
+            [
+                353,
+                360
+            ],
+            [
+                609,
+                618
+            ],
+            [
+                678,
+                687
+            ],
+            [
+                861,
+                870
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 258,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 19,
+        "NUMBER OF LINES IN TEXT": 20
+    },
+    "I0558253B-I3CN5570.txt": {
+        "NON_WORD": 0,
+        "NON_WORD_TEXT": [],
+        "TOTAL_TOKENS": 223,
+        "OCR_ERROR_COUNT": 2,
+        "OCR_ERROR_COUNT_RATIO": 0.008968609865470852,
+        "TEXT_QUALITY": "Good",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                535,
+                538
+            ],
+            [
+                566,
+                571
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 277,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 20,
+        "NUMBER OF LINES IN TEXT": 17
+    },
+    "OC73AA47F-D2A8.txt": {
+        "NON_WORD": 9,
+        "NON_WORD_TEXT": [
+            "ཨཱཿ",
+            "ྂ",
+            "ཕཊ",
+            "ཆོམས",
+            "བྷནྡྷ་",
+            "ཧཾ་",
+            "ཨཱཿ",
+            "ྂ",
+            "ཕཊ"
+        ],
+        "TOTAL_TOKENS": 212,
+        "OCR_ERROR_COUNT": 7,
+        "OCR_ERROR_COUNT_RATIO": 0.0330188679245283,
+        "TEXT_QUALITY": "Fair",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                11,
+                12
+            ],
+            [
+                38,
+                39
+            ],
+            [
+                62,
+                63
+            ],
+            [
+                73,
+                74
+            ],
+            [
+                541,
+                542
+            ],
+            [
+                904,
+                905
+            ],
+            [
+                911,
+                912
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 275,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 32,
+        "NUMBER OF LINES IN TEXT": 30
+    },
+    "O3F99F890-E58E.txt": {
+        "NON_WORD": "NOT APPLICBLE",
+        "TOTAL_TOKENS": "NOT APPLICABLE",
+        "OCR_ERROR_COUNT": "NOT APPLICABLE",
+        "TEXT_QUALITY": "NOT APPLICABLE",
+        "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
+        "LANGUAGE": "CJK",
+        "CHUNK_SIZE": "NOT APPLICABLE",
+        "CHARACTER_COUNT": "NOT APPLICABLE",
+        "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
+    },
+    "I50A96404-I0531.txt": {
+        "NON_WORD": 3,
+        "NON_WORD_TEXT": [
+            "རྫོས་",
+            "རྫོངོས་",
+            "འཁོརོ་"
+        ],
+        "TOTAL_TOKENS": 217,
+        "OCR_ERROR_COUNT": 7,
+        "OCR_ERROR_COUNT_RATIO": 0.03225806451612903,
+        "TEXT_QUALITY": "Fair",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                196,
+                204
+            ],
+            [
+                275,
+                279
+            ],
+            [
+                518,
+                521
+            ],
+            [
+                559,
+                563
+            ],
+            [
+                722,
+                726
+            ],
+            [
+                935,
+                936
+            ],
+            [
+                936,
+                937
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 280,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 18,
+        "NUMBER OF LINES IN TEXT": 13
+    },
+    "IF7303B93-F6A4.txt": {
+        "NON_WORD": "NOT APPLICBLE",
+        "TOTAL_TOKENS": "NOT APPLICABLE",
+        "OCR_ERROR_COUNT": "NOT APPLICABLE",
+        "TEXT_QUALITY": "NOT APPLICABLE",
+        "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
+        "LANGUAGE": "CJK",
+        "CHUNK_SIZE": "NOT APPLICABLE",
+        "CHARACTER_COUNT": "NOT APPLICABLE",
+        "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
+    },
+    "O2F7D000D-E74E.txt": {
+        "NON_WORD": "NOT APPLICBLE",
+        "TOTAL_TOKENS": "NOT APPLICABLE",
+        "OCR_ERROR_COUNT": "NOT APPLICABLE",
+        "TEXT_QUALITY": "NOT APPLICABLE",
+        "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
+        "LANGUAGE": "CJK",
+        "CHUNK_SIZE": "NOT APPLICABLE",
+        "CHARACTER_COUNT": "NOT APPLICABLE",
+        "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
+    },
+    "I545CA2AE-I1PD36473.txt": {
+        "NON_WORD": 4,
+        "NON_WORD_TEXT": [
+            "སྒུའུ་",
+            "རྒྱུལ་",
+            "དགྲུ་",
+            "ཚཡེ་"
+        ],
+        "TOTAL_TOKENS": 221,
+        "OCR_ERROR_COUNT": 6,
+        "OCR_ERROR_COUNT_RATIO": 0.027149321266968326,
+        "TEXT_QUALITY": "Fair",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                15,
+                20
+            ],
+            [
+                248,
+                253
+            ],
+            [
+                253,
+                255
+            ],
+            [
+                487,
+                491
+            ],
+            [
+                537,
+                541
+            ],
+            [
+                660,
+                667
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 261,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 20,
+        "NUMBER OF LINES IN TEXT": 25
+    },
+    "IB62310A5-55BC.txt": {
+        "NON_WORD": "NOT APPLICBLE",
+        "TOTAL_TOKENS": "NOT APPLICABLE",
+        "OCR_ERROR_COUNT": "NOT APPLICABLE",
+        "TEXT_QUALITY": "NOT APPLICABLE",
+        "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
+        "LANGUAGE": "CJK",
+        "CHUNK_SIZE": "NOT APPLICABLE",
+        "CHARACTER_COUNT": "NOT APPLICABLE",
+        "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
+    },
+    "IBE7D4431-1647.txt": {
+        "NON_WORD": 2,
+        "NON_WORD_TEXT": [
+            "ཀྲུངཅན",
+            "བྷིཤིཉྩའི་"
+        ],
+        "TOTAL_TOKENS": 222,
+        "OCR_ERROR_COUNT": 23,
+        "OCR_ERROR_COUNT_RATIO": 0.1036036036036036,
+        "TEXT_QUALITY": "Poor",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                39,
+                40
+            ],
+            [
+                70,
+                71
+            ],
+            [
+                70,
+                71
+            ],
+            [
+                109,
+                110
+            ],
+            [
+                190,
+                191
+            ],
+            [
+                217,
+                218
+            ],
+            [
+                257,
+                258
+            ],
+            [
+                296,
+                297
+            ],
+            [
+                338,
+                339
+            ],
+            [
+                368,
+                369
+            ],
+            [
+                406,
+                407
+            ],
+            [
+                445,
+                446
+            ],
+            [
+                484,
+                485
+            ],
+            [
+                519,
+                520
+            ],
+            [
+                558,
+                559
+            ],
+            [
+                558,
+                559
+            ],
+            [
+                634,
+                635
+            ],
+            [
+                668,
+                669
+            ],
+            [
+                705,
+                706
+            ],
+            [
+                745,
+                746
+            ],
+            [
+                790,
+                791
+            ],
+            [
+                827,
+                828
+            ],
+            [
+                827,
+                828
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 273,
+        "CHARACTER_COUNT": 902,
+        "AFFIXED_WORD_COUNT": 15,
+        "NUMBER OF LINES IN TEXT": 1
+    },
+    "IB4B333BB-I1KG17123.txt": {
+        "NON_WORD": 3,
+        "NON_WORD_TEXT": [
+            "ཅན བརྡེག་",
+            "རྐལ",
+            "ཊཱིཀ་"
+        ],
+        "TOTAL_TOKENS": 205,
+        "OCR_ERROR_COUNT": 5,
+        "OCR_ERROR_COUNT_RATIO": 0.024390243902439025,
+        "TEXT_QUALITY": "Fair",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                15,
+                24
+            ],
+            [
+                531,
+                534
+            ],
+            [
+                900,
+                904
+            ],
+            [
+                904,
+                908
+            ],
+            [
+                992,
+                995
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 276,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 29,
+        "NUMBER OF LINES IN TEXT": 17
+    },
+    "IB92BAE0C-I1CZ1961.txt": {
+        "NON_WORD": 53,
+        "NON_WORD_TEXT": [
+            "འབདེཝཛདེ་",
+            "ཐདེའབཉྫའ",
+            "ཝེ བ ",
+            "སྦྱརྗེ་",
+            "ཎིཤུདྡྷེ་ ",
+            "ཤུཙྪ་",
+            "ཐགུལྔ་",
+            "ཛེ་",
+            "ཞཔ་",
+            "ཇིབབ་",
+            "མེཀྱི་",
+            "བཏེ་",
+            "ཁྱོཇོ་",
+            "ཙཛ",
+            "ཛམ་",
+            "ཊྛིཏྟ",
+            "ཛདྷ་",
+            "སྦྱོ་",
+            "པེ བྱཱ ",
+            "ཨཱརཱཎསྦོཔེ",
+            "ཞཤུཊ",
+            "བླཆེ",
+            "ཎཏེ་་༌༌༌",
+            "འ",
+            "ནུབས་",
+            "ཐདེ་",
+            "ངེའི་",
+            "ཡིཝ་",
+            "སྦྱངཝ་ ",
+            "སེསི་",
+            "ཨཀིསཾ་",
+            "ལྟཞིང་",
+            "བཙུཞུ་",
+            "མངོ་",
+            "འཐ་ ",
+            "ཝཔ་",
+            "སྦྱོངེ་",
+            "ཞལྕཛོ་",
+            "ཏེང་",
+            "ཝསྐྱེ་",
+            "བྱངྒེ་",
+            "འཛཀྱིཛ་",
+            "གྱིཝ་",
+            "ཝསྐྱེ",
+            "མཆོདོ་",
+            "ཚུཝ་",
+            "དརཝ་ ",
+            "ཞྭས་",
+            "སྨིར་",
+            "ཇུཝ",
+            "འདེདེ་",
+            "རིཊི་",
+            "འསྲེག་"
+        ],
+        "TOTAL_TOKENS": 259,
+        "OCR_ERROR_COUNT": 92,
+        "OCR_ERROR_COUNT_RATIO": 0.3552123552123552,
+        "TEXT_QUALITY": "Poor",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                18,
+                20
+            ],
+            [
+                27,
+                29
+            ],
+            [
+                29,
+                34
+            ],
+            [
+                34,
+                36
+            ],
+            [
+                42,
+                44
+            ],
+            [
+                44,
+                45
+            ],
+            [
+                45,
+                52
+            ],
+            [
+                52,
+                54
+            ],
+            [
+                54,
+                56
+            ],
+            [
+                56,
+                59
+            ],
+            [
+                59,
+                61
+            ],
+            [
+                58,
+                71
+            ],
+            [
+                78,
+                82
+            ],
+            [
+                85,
+                88
+            ],
+            [
+                89,
+                90
+            ],
+            [
+                91,
+                93
+            ],
+            [
+                99,
+                100
+            ],
+            [
+                100,
+                101
+            ],
+            [
+                101,
+                102
+            ],
+            [
+                105,
+                108
+            ],
+            [
+                108,
+                110
+            ],
+            [
+                113,
+                115
+            ],
+            [
+                115,
+                116
+            ],
+            [
+                117,
+                120
+            ],
+            [
+                116,
+                121
+            ],
+            [
+                126,
+                132
+            ],
+            [
+                132,
+                134
+            ],
+            [
+                134,
+                140
+            ],
+            [
+                157,
+                167
+            ],
+            [
+                156,
+                158
+            ],
+            [
+                170,
+                174
+            ],
+            [
+                175,
+                177
+            ],
+            [
+                177,
+                179
+            ],
+            [
+                179,
+                181
+            ],
+            [
+                181,
+                182
+            ],
+            [
+                183,
+                184
+            ],
+            [
+                184,
+                186
+            ],
+            [
+                233,
+                235
+            ],
+            [
+                232,
+                236
+            ],
+            [
+                267,
+                270
+            ],
+            [
+                269,
+                274
+            ],
+            [
+                278,
+                279
+            ],
+            [
+                279,
+                281
+            ],
+            [
+                278,
+                282
+            ],
+            [
+                294,
+                295
+            ],
+            [
+                300,
+                301
+            ],
+            [
+                306,
+                307
+            ],
+            [
+                307,
+                308
+            ],
+            [
+                334,
+                341
+            ],
+            [
+                341,
+                345
+            ],
+            [
+                355,
+                359
+            ],
+            [
+                370,
+                372
+            ],
+            [
+                372,
+                376
+            ],
+            [
+                378,
+                380
+            ],
+            [
+                380,
+                385
+            ],
+            [
+                385,
+                388
+            ],
+            [
+                384,
+                392
+            ],
+            [
+                409,
+                413
+            ],
+            [
+                414,
+                416
+            ],
+            [
+                452,
+                455
+            ],
+            [
+                466,
+                473
+            ],
+            [
+                465,
+                467
+            ],
+            [
+                521,
+                523
+            ],
+            [
+                551,
+                555
+            ],
+            [
+                556,
+                557
+            ],
+            [
+                567,
+                571
+            ],
+            [
+                621,
+                623
+            ],
+            [
+                627,
+                631
+            ],
+            [
+                631,
+                636
+            ],
+            [
+                648,
+                653
+            ],
+            [
+                673,
+                674
+            ],
+            [
+                676,
+                683
+            ],
+            [
+                683,
+                686
+            ],
+            [
+                696,
+                700
+            ],
+            [
+                700,
+                702
+            ],
+            [
+                731,
+                734
+            ],
+            [
+                776,
+                779
+            ],
+            [
+                778,
+                780
+            ],
+            [
+                783,
+                785
+            ],
+            [
+                785,
+                790
+            ],
+            [
+                815,
+                817
+            ],
+            [
+                823,
+                833
+            ],
+            [
+                848,
+                853
+            ],
+            [
+                858,
+                863
+            ],
+            [
+                899,
+                901
+            ],
+            [
+                906,
+                908
+            ],
+            [
+                928,
+                930
+            ],
+            [
+                956,
+                958
+            ],
+            [
+                955,
+                960
+            ],
+            [
+                964,
+                965
+            ],
+            [
+                989,
+                990
+            ],
+            [
+                990,
+                992
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 275,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 15,
+        "NUMBER OF LINES IN TEXT": 30
+    },
+    "O746ADC20-34AD.txt": {
+        "NON_WORD": "NOT APPLICBLE",
+        "TOTAL_TOKENS": "NOT APPLICABLE",
+        "OCR_ERROR_COUNT": "NOT APPLICABLE",
+        "TEXT_QUALITY": "NOT APPLICABLE",
+        "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
+        "LANGUAGE": "CJK",
+        "CHUNK_SIZE": "NOT APPLICABLE",
+        "CHARACTER_COUNT": "NOT APPLICABLE",
+        "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
+    },
+    "O1B791BB1-1014.txt": {
+        "NON_WORD": 4,
+        "NON_WORD_TEXT": [
+            "ཙཎྜ་",
+            "ལཱི་",
+            "དྷི་",
+            "སཏྭའི་"
+        ],
+        "TOTAL_TOKENS": 200,
+        "OCR_ERROR_COUNT": 1,
+        "OCR_ERROR_COUNT_RATIO": 0.005,
+        "TEXT_QUALITY": "Good",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                141,
+                147
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 268,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 11,
+        "NUMBER OF LINES IN TEXT": 1
+    },
+    "O9B1EEEAE-E83B.txt": {
+        "NON_WORD": "NOT APPLICBLE",
+        "TOTAL_TOKENS": "NOT APPLICABLE",
+        "OCR_ERROR_COUNT": "NOT APPLICABLE",
+        "TEXT_QUALITY": "NOT APPLICABLE",
+        "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
+        "LANGUAGE": "CJK",
+        "CHUNK_SIZE": "NOT APPLICABLE",
+        "CHARACTER_COUNT": "NOT APPLICABLE",
+        "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
+    },
+    "I576A67DC-bd88.txt": {
+        "NON_WORD": "NOT APPLICBLE",
+        "TOTAL_TOKENS": "NOT APPLICABLE",
+        "OCR_ERROR_COUNT": "NOT APPLICABLE",
+        "TEXT_QUALITY": "NOT APPLICABLE",
+        "OCR_ERROR_LOCATIONS": "NOT APPLICABLE",
+        "LANGUAGE": "CJK",
+        "CHUNK_SIZE": "NOT APPLICABLE",
+        "CHARACTER_COUNT": "NOT APPLICABLE",
+        "AFFIXED_WORD_COUNT": "NOT APPLICABLE"
+    },
+    "O22640122-8945.txt": {
+        "NON_WORD": 2,
+        "NON_WORD_TEXT": [
+            "ཏྲཾ་",
+            "མཱནྟ་"
+        ],
+        "TOTAL_TOKENS": 199,
+        "OCR_ERROR_COUNT": 5,
+        "OCR_ERROR_COUNT_RATIO": 0.02512562814070352,
+        "TEXT_QUALITY": "Fair",
+        "OCR_ERROR_LOCATIONS": [
+            [
+                53,
+                54
+            ],
+            [
+                276,
+                277
+            ],
+            [
+                507,
+                508
+            ],
+            [
+                722,
+                723
+            ],
+            [
+                953,
+                954
+            ]
+        ],
+        "LANGUAGE": "TIBETAN",
+        "CHUNK_SIZE": 274,
+        "CHARACTER_COUNT": 1000,
+        "AFFIXED_WORD_COUNT": 16,
+        "NUMBER OF LINES IN TEXT": 33
     }
 }
