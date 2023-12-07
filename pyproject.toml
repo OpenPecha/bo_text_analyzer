@@ -19,6 +19,7 @@ classifiers = [
 
 dependencies = [
   "GitPython>=3.1.37",
+  "botok >= 0.8.1",
 ]
 
 [project.optional-dependencies]
