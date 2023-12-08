@@ -1,49 +1,11 @@
-import csv
 import json
 import logging
-import random
 import re
 from pathlib import Path
 
 from botok import WordTokenizer
 from botok.config import Config
 from github import Github
-
-
-def select_random_pecha_ids(csv_file_path, num_rows):
-    """
-    Selects a random set of Pecha IDs from a CSV file.
-
-    Args:
-        csv_file_path (str): Path to the CSV file containing Pecha IDs.
-        num_rows (int): Number of random IDs to select.
-
-    Returns:
-        list: A list of randomly selected Pecha IDs.
-    """
-    try:
-        selected_pecha_ids = []
-
-        with open(csv_file_path, newline="", encoding="utf-8") as csvfile:
-            csv_reader = csv.DictReader(csvfile)
-            all_rows = list(csv_reader)
-
-            # Check if the number of rows requested is greater than the total number of rows
-            if num_rows > len(all_rows):
-                num_rows = len(all_rows)
-
-            # Randomly select num_rows from the list of all rows
-            selected_rows = random.sample(all_rows, num_rows)
-
-            # Extract the Pecha IDs from the selected rows
-            for row in selected_rows:
-                pecha_id = row["Pecha ID"].strip()
-                selected_pecha_ids.append(pecha_id)
-
-        return selected_pecha_ids  # Ensure that the list of Pecha IDs is returned
-    except Exception as e:
-        print(f"Error in select_random_pecha_ids: {e}")
-        return None
 
 
 def extract_text_from_files(organization, github_token, pecha_id):
@@ -87,14 +49,14 @@ def extract_text_from_files(organization, github_token, pecha_id):
 
                     # Check for the presence of Tibetan script
                     if re.search(r"[\u0F00-\u0FFF]+", full_text):
-                        if "།" in full_text:  # Check if shed is present
+                        if len(full_text) > 3000:  # Check if shed is present
                             # Split the text into sentences based on the tshek (།)
                             sentences = full_text.split("།")
-                            length = 50
+                            length = 10
                         else:
-                            # If shed is not present, use tsek (་) for segmentation
-                            sentences = full_text.split("་")
-                            length = 1
+                            begin = 0
+                            end = len(full_text)
+                            return full_text, file_content.name, begin, end
 
                     else:
                         # Handle non-Tibetan text segmentation or other logic
@@ -106,8 +68,8 @@ def extract_text_from_files(organization, github_token, pecha_id):
                     # Determine the midsection of the text
                     mid_point = len(sentences) // 2
                     half_span = min(
-                        length, len(sentences) // 2
-                    )  # Half of 50 or half of total sentences if less
+                        length, (len(sentences) // 2 + 1)
+                    )  # Half of 30 or half of total sentences if less
 
                     # Select up to 50 sentences from the midsection
                     start_indexs = max(0, mid_point - half_span)
@@ -205,62 +167,76 @@ def tokenize_text(wt, text, pecha_id, pecha_sub_file, start, end):
     }
 
 
-if __name__ == "__main__":
-    # Your GitHub personal access token (replace with your actual token)
+def process_pechas(pecha_ids, github_token, organization):
+    results = {}
+    wt = WordTokenizer(config=Config(dialect_name="general", base_path=Path.home()))
+
+    for pecha_id in pecha_ids:
+        print(pecha_id)
+        (
+            extracted_text,
+            pecha_file_name,
+            start_index,
+            end_index,
+        ) = extract_text_from_files(organization, github_token, pecha_id)
+
+        if extracted_text is not None and pecha_file_name is not None:
+            analysis_result = tokenize_text(
+                wt, extracted_text, pecha_id, pecha_file_name, start_index, end_index
+            )
+            results[pecha_id] = analysis_result
+
+    return results
+
+
+def main():
     github_token = "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"
-    # Example usage:
     organization_name = "OpenPecha-Data"
-    # Configure the logging settings
+
+    # Example: List of Pecha IDs to process
+    pecha_ids = [
+        "I2E7867A6",
+        "I6440520B",
+        "P000796",
+        "P000815",
+        "P000779",
+        "P000792",
+        "I84B5FA9B",
+        "I84EB18FB",
+        "I0FAA1C40",
+        "I229815A9",
+        "IFF5475DD",
+        "I20A50BB6",
+        "I06324580",
+        "IB3BFD2E7",
+        "I33D3B96F",
+        "I340DE5FA",
+        "ICB0FDD9A",
+        "ID194E73E",
+        "IBF06BC6C",
+        "I79C6CCCC",
+        "O1EB43CCE",
+        "O3C4D0D40",
+    ]
+
+    # Configure logging
     logging.basicConfig(
-        filename="empty_files.log",
+        filename="pecha_processing.log",
         level=logging.INFO,
         format="%(asctime)s - %(message)s",
     )
-    # Configure the botok settings
-    config = Config(dialect_name="general", base_path=Path.home())
 
-    wt = WordTokenizer(config=config)
-    # Create a dictionary to store results
-    results = {}
-    # Example usage:
-    csv_file_path = (
-        "/home/gangagyatso/Desktop/project4/pechadata_analysis/data/opf_catalog.csv"
+    results = process_pechas(pecha_ids, github_token, organization_name)
+
+    # Output the results to a JSON file
+    output_file = (
+        "/home/gangagyatso/Desktop/project4/pechadata_analysis/data/practise.json"
     )
-    num_rows_to_select = 5
+    with open(output_file, "w", encoding="utf-8") as file:
+        json.dump(results, file, ensure_ascii=False, indent=4)
 
-    selected_pecha_ids = select_random_pecha_ids(csv_file_path, num_rows_to_select)
-    if selected_pecha_ids:
-        print("Randomly selected Pecha IDs:")
-        for pecha_id in selected_pecha_ids:
-            print(pecha_id)
-            (
-                extracted_text,
-                pecha_file_name,
-                start_index,
-                end_index,
-            ) = extract_text_from_files(organization_name, github_token, pecha_id)
-            if extracted_text is not None and pecha_file_name is not None:
-                nonword_dict = tokenize_text(
-                    wt,
-                    extracted_text,
-                    pecha_id,
-                    pecha_file_name,
-                    start_index,
-                    end_index,
-                )
-                base_id = f"{pecha_file_name.split('.')[0]}"
-                results[f"{pecha_id}"] = {f"{base_id}": nonword_dict}
+    print(f"Results saved to {output_file}")
 
-        # Specify the file name where the JSON data will be written
-        file_name = (
-            "/home/gangagyatso/Desktop/project4/pechadata_analysis/data/pecha_data.json"
-        )
 
-        # Writing the dictionary to a JSON file
-        with open(file_name, "w", encoding="utf-8") as file:
-            json.dump(results, file, ensure_ascii=False, indent=4)
-
-        print(f"Data written to {file_name}")
-
-    else:
-        print("No Pecha IDs were selected.")
+if __name__ == "__main__":
+    main()
