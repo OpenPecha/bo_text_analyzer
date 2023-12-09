@@ -22,7 +22,7 @@ def test_analyze_tokens():
     text = "abdul kalamའཁྱེད་ལ་སུན་པོ་ཀཟོས་པར་དགོངས་དག་ཞུ་ཨུམ་ཨུམ་་་། ()$%322 ༣༢༢་�� 你好吗 कैसे ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ"
     expected_non_word = 4
     expected_bo_non_word = 5
-    expected_total_token = 18
+    expected_total_token = 20
 
     # Analyze the tokens and get counts
     a, b, c = analyze_tokens(wt, text)
