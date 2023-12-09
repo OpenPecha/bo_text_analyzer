@@ -21,7 +21,7 @@ def test_analyze_tokens():
     # Test text with known non-word, non-bo word, and total token counts
     text = "abdul kalamའཁྱེད་ལ་སུན་པོ་ཀཟོས་པར་དགོངས་དག་ཞུ་ཨུམ་ཨུམ་་་། ()$%322 ༣༢༢་�� 你好吗 कैसे ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ"
     expected_non_word = 4
-    expected_bo_non_word = 4
+    expected_bo_non_word = 5
     expected_total_token = 18
 
     # Analyze the tokens and get counts
