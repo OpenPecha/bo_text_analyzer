@@ -1,3 +1,4 @@
+import base64
 import json
 import logging
 import re
@@ -6,6 +7,19 @@ from pathlib import Path
 from botok import WordTokenizer
 from botok.config import Config
 from github import Github
+
+
+def extract_text_from_large_file(repo, file_sha):
+    try:
+        # Get the blob from the repository using the file's SHA
+        blob = repo.get_git_blob(file_sha)
+        # Blob content is base64 encoded, so it needs to be decoded
+        content = base64.b64decode(blob.content)
+        text = content.decode("utf-8")  # assuming the file is utf-8 encoded
+        return text
+    except Exception as e:
+        print(f"Error in fetching large file content: {e}")
+        return None
 
 
 def extract_text_from_files(organization, github_token, pecha_id):
@@ -30,6 +44,8 @@ def extract_text_from_files(organization, github_token, pecha_id):
 
         repo_name = pecha_id
 
+        all_results = []  # List to store results of all files
+
         try:
             # Get the repository within the organization
             repo = org.get_repo(repo_name)
@@ -43,9 +59,12 @@ def extract_text_from_files(organization, github_token, pecha_id):
             # Iterate through the contents and process text files
             for file_content in base_folder_contents:
                 if file_content.type == "file" and file_content.name.endswith(".txt"):
-                    full_text = file_content.decoded_content.decode(
-                        "utf-8", errors="replace"
-                    )
+                    if file_content.size > 1000000:  # If file size is larger than 1MB
+                        full_text = extract_text_from_large_file(repo, file_content.sha)
+                    else:
+                        full_text = file_content.decoded_content.decode(
+                            "utf-8", errors="replace"
+                        )
 
                     # Check for the presence of Tibetan script
                     if re.search(r"[\u0F00-\u0FFF]+", full_text):
@@ -56,7 +75,10 @@ def extract_text_from_files(organization, github_token, pecha_id):
                         else:
                             begin = 0
                             end = len(full_text)
-                            return full_text, file_content.name, begin, end
+                            all_results.append(
+                                (full_text, file_content.name, begin, end)
+                            )
+                            continue
 
                     else:
                         # Handle non-Tibetan text segmentation or other logic
@@ -78,33 +100,27 @@ def extract_text_from_files(organization, github_token, pecha_id):
 
                     # Join the sentences back with appropriate delimiter
                     if re.search(r"[\u0F00-\u0FFF]+", full_text):
-                        if "།" in full_text:  # Check if shed is present
+                        if len(full_text) > 3000:  # Check if shed is present
                             # Split the text into sentences based on the tshek (།)
                             extracted_text = "།".join(selected_sentences) + "།"
-                        else:
-                            # If shed is not present, use tsek (་) for segmentation
-                            extracted_text = "་".join(selected_sentences) + "་"
+                            start_index = full_text.find(extracted_text)
+                            end_index = start_index + len(extracted_text)
+
                     else:
                         extracted_text = "\n".join(selected_sentences) + "\n"
-
-                    # Calculate start and end indices of the extracted text
-                    if extracted_text:
-                        start_index = full_text.find(extracted_text)
-                        end_index = start_index + len(extracted_text)
-                    else:
                         start_index, end_index = 0, 0
 
-                    return extracted_text, file_content.name, start_index, end_index
-
-            # Return None values if no files are processed
-            return None, None, None, None
+                    all_results.append(
+                        (extracted_text, file_content.name, start_index, end_index)
+                    )
 
         except Exception as e:
             print(f"Error in accessing repository {repo_name}: {e}")
-            return None, None, None, None
+            return (None, None, None, None)
     except Exception as e:
         print(f"Error in extract_text_from_files: {e}")
-        return None, None, None, None
+        return (None, None, None, None)
+    return all_results
 
 
 def analyze_tokens(wt, text):
@@ -172,40 +188,52 @@ def process_pechas(pecha_ids, github_token, organization):
     wt = WordTokenizer(config=Config(dialect_name="general", base_path=Path.home()))
 
     for pecha_id in pecha_ids:
-        print(pecha_id)
-        (
-            extracted_text,
-            pecha_file_name,
-            start_index,
-            end_index,
-        ) = extract_text_from_files(organization, github_token, pecha_id)
+        print(f"Processing Pecha ID: {pecha_id}")
+        all_results = extract_text_from_files(organization, github_token, pecha_id)
 
-        if extracted_text is not None and pecha_file_name is not None:
-            analysis_result = tokenize_text(
-                wt, extracted_text, pecha_id, pecha_file_name, start_index, end_index
-            )
-            results[pecha_id] = analysis_result
+        if all_results is None:
+            print(f"No data returned for Pecha ID {pecha_id}")
+            continue
+
+        pecha_results = {}  # Dictionary to store results for this pecha
+        for result in all_results:
+            if result is None:
+                continue
+            extracted_text, pecha_file_name, start_index, end_index = result
+
+            if extracted_text is not None and pecha_file_name is not None:
+                analysis_result = tokenize_text(
+                    wt,
+                    extracted_text,
+                    pecha_id,
+                    pecha_file_name,
+                    start_index,
+                    end_index,
+                )
+                pecha_results[
+                    pecha_file_name
+                ] = analysis_result  # Store analysis result for each file
+
+        results[pecha_id] = pecha_results  # Store all file results for this pecha
 
     return results
 
 
 def main():
-    github_token = "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"
+    github_token = "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"
     organization_name = "OpenPecha-Data"
 
     # Example: List of Pecha IDs to process
     pecha_ids = [
-        "I2E7867A6",
-        "I6440520B",
-        "P000796",
-        "P000815",
-        "P000779",
-        "P000792",
-        "I84B5FA9B",
-        "I84EB18FB",
-        "I0FAA1C40",
+        "I8A764804",
+        "O1EB43CCE",
+        "I8A764804",
         "I229815A9",
         "IFF5475DD",
+        "I84B5FA9B",
+        "P000792",
+        "I84EB18FB",
+        "I0FAA1C40",
         "I20A50BB6",
         "I06324580",
         "IB3BFD2E7",
@@ -217,6 +245,11 @@ def main():
         "I79C6CCCC",
         "O1EB43CCE",
         "O3C4D0D40",
+        "I2E7867A6",
+        "I6440520B",
+        "P000796",
+        "P000815",
+        "P000779",
     ]
 
     # Configure logging
