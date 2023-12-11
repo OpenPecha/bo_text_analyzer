@@ -126,7 +126,7 @@ def extract_text_from_files(organization, github_token, pecha_id):
                     if len(full_text) > 3000:  # Check if shed is present
                         # Split the text into sentences based on the tshek (།)
                         sentences = full_text.split("།")
-                        length = 10
+                        length = 20
                     else:
                         begin = 0
                         end = len(full_text)
@@ -137,7 +137,7 @@ def extract_text_from_files(organization, github_token, pecha_id):
                     sentences = full_text.split(
                         "\n"
                     )  # Example: split on nextline for mandarin
-                    length = 5
+                    length = 10
 
                 # Determine the midsection of the text
                 mid_point = len(sentences) // 2
@@ -155,12 +155,11 @@ def extract_text_from_files(organization, github_token, pecha_id):
                     if len(full_text) > 3000:  # Check if shed is present
                         # Split the text into sentences based on the tshek (།)
                         extracted_text = "།".join(selected_sentences) + "།"
-                        start_index = full_text.find(extracted_text)
-                        end_index = start_index + len(extracted_text)
 
                 else:
                     extracted_text = "\n".join(selected_sentences) + "\n"
-                    start_index, end_index = 0, 0
+                start_index = full_text.find(extracted_text)
+                end_index = start_index + len(extracted_text)
 
                 all_results.append(
                     (extracted_text, file_content.name, start_index, end_index)
@@ -258,8 +257,7 @@ def process_pechas(pecha_ids, github_token, organization):
         if all_results is None:
             print(f"No data returned for Pecha ID {pecha_id}")
             continue
-
-        pecha_results = {}  # Dictionary to store results for this pecha
+        analysis_result = {}
         for result in all_results:
             if result is None:
                 continue
@@ -274,11 +272,8 @@ def process_pechas(pecha_ids, github_token, organization):
                     start_index,
                     end_index,
                 )
-                pecha_results[
-                    pecha_file_name
-                ] = analysis_result  # Store analysis result for each file
 
-        results[pecha_id] = pecha_results  # Store all file results for this pecha
+        results[pecha_id] = analysis_result  # Store all file results for this pecha
 
     return results
 
@@ -293,7 +288,7 @@ def main():
     Returns:
         None (Outputs are saved to file and logged)
     """
-    github_token = "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"
+    github_token = "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"
     organization_name = "OpenPecha-Data"
 
     # Example: List of Pecha IDs to process

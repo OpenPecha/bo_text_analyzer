@@ -1,232 +1,186 @@
 {
     "I8A764804": {
-        "I3CN8626.txt": {
-            "base_text": "I3CN8626.txt",
-            "character_start": 200970,
-            "character_end": 201273,
-            "total_word_count": 60,
-            "non_word_count": 0,
-            "non_bo_word_count": 0
-        }
+        "base_text": "I3CN8626.txt",
+        "character_start": 200568,
+        "character_end": 202063,
+        "total_word_count": 281,
+        "non_word_count": 0,
+        "non_bo_word_count": 0
     },
     "O1EB43CCE": {
-        "A710.txt": {
-            "base_text": "A710.txt",
-            "character_start": 0,
-            "character_end": 17,
-            "total_word_count": 1,
-            "non_word_count": 0,
-            "non_bo_word_count": 0
-        }
+        "base_text": "A710.txt",
+        "character_start": 0,
+        "character_end": 17,
+        "total_word_count": 1,
+        "non_word_count": 0,
+        "non_bo_word_count": 0
     },
     "I229815A9": {
-        "I1KG419.txt": {
-            "base_text": "I1KG419.txt",
-            "character_start": 262279,
-            "character_end": 262807,
-            "total_word_count": 134,
-            "non_word_count": 11,
-            "non_bo_word_count": 9
-        }
+        "base_text": "I1KG420.txt",
+        "character_start": 210644,
+        "character_end": 211667,
+        "total_word_count": 188,
+        "non_word_count": 7,
+        "non_bo_word_count": 1
     },
     "IFF5475DD": {
-        "C07B.txt": {
-            "base_text": "C07B.txt",
-            "character_start": 12646,
-            "character_end": 13290,
-            "total_word_count": 134,
-            "non_word_count": 13,
-            "non_bo_word_count": 1
-        }
+        "base_text": "C07B.txt",
+        "character_start": 12387,
+        "character_end": 13623,
+        "total_word_count": 255,
+        "non_word_count": 27,
+        "non_bo_word_count": 7
     },
     "I84B5FA9B": {
-        "I4191.txt": {
-            "base_text": "I4191.txt",
-            "character_start": 173202,
-            "character_end": 173601,
-            "total_word_count": 111,
-            "non_word_count": 1,
-            "non_bo_word_count": 0
-        }
+        "base_text": "I4183.txt",
+        "character_start": 296706,
+        "character_end": 297274,
+        "total_word_count": 128,
+        "non_word_count": 1,
+        "non_bo_word_count": 0
     },
     "P000792": {
-        "v033.txt": {
-            "base_text": "v033.txt",
-            "character_start": 1245814,
-            "character_end": 1246111,
-            "total_word_count": 58,
-            "non_word_count": 0,
-            "non_bo_word_count": 0
-        }
+        "base_text": "v003.txt",
+        "character_start": 1150856,
+        "character_end": 1151530,
+        "total_word_count": 152,
+        "non_word_count": 0,
+        "non_bo_word_count": 1
     },
     "I84EB18FB": {
-        "I2PD18513.txt": {
-            "base_text": "I2PD18513.txt",
-            "character_start": 306587,
-            "character_end": 306939,
-            "total_word_count": 84,
-            "non_word_count": 0,
-            "non_bo_word_count": 0
-        }
+        "base_text": "I2PD18516.txt",
+        "character_start": 242093,
+        "character_end": 243555,
+        "total_word_count": 283,
+        "non_word_count": 0,
+        "non_bo_word_count": 0
     },
     "I0FAA1C40": {
-        "I1KG420.txt": {
-            "base_text": "I1KG420.txt",
-            "character_start": 211015,
-            "character_end": 211497,
-            "total_word_count": 89,
-            "non_word_count": 3,
-            "non_bo_word_count": 0
-        }
+        "base_text": "I1KG419.txt",
+        "character_start": 262043,
+        "character_end": 263046,
+        "total_word_count": 262,
+        "non_word_count": 21,
+        "non_bo_word_count": 11
     },
     "I20A50BB6": {
-        "B4F5.txt": {
-            "base_text": "B4F5.txt",
-            "character_start": 113696,
-            "character_end": 114099,
-            "total_word_count": 93,
-            "non_word_count": 17,
-            "non_bo_word_count": 3
-        }
+        "base_text": "B4F5.txt",
+        "character_start": 113467,
+        "character_end": 114382,
+        "total_word_count": 204,
+        "non_word_count": 33,
+        "non_bo_word_count": 8
     },
     "I06324580": {
-        "I2PD20282.txt": {
-            "base_text": "I2PD20282.txt",
-            "character_start": 78041,
-            "character_end": 79480,
-            "total_word_count": 302,
-            "non_word_count": 21,
-            "non_bo_word_count": 17
-        }
+        "base_text": "I2PD20282.txt",
+        "character_start": 77232,
+        "character_end": 80069,
+        "total_word_count": 603,
+        "non_word_count": 33,
+        "non_bo_word_count": 35
     },
     "IB3BFD2E7": {
-        "4228.txt": {
-            "base_text": "4228.txt",
-            "character_start": 36418,
-            "character_end": 36693,
-            "total_word_count": 62,
-            "non_word_count": 0,
-            "non_bo_word_count": 2
-        }
+        "base_text": "4228.txt",
+        "character_start": 36097,
+        "character_end": 37110,
+        "total_word_count": 220,
+        "non_word_count": 6,
+        "non_bo_word_count": 12
     },
     "I33D3B96F": {
-        "I8LS18834.txt": {
-            "base_text": "I8LS18834.txt",
-            "character_start": 65494,
-            "character_end": 66783,
-            "total_word_count": 243,
-            "non_word_count": 0,
-            "non_bo_word_count": 12
-        }
+        "base_text": "I8LS18834.txt",
+        "character_start": 65240,
+        "character_end": 67809,
+        "total_word_count": 500,
+        "non_word_count": 1,
+        "non_bo_word_count": 22
     },
     "I340DE5FA": {
-        "I3CN4623.txt": {
-            "base_text": "I3CN4623.txt",
-            "character_start": 145153,
-            "character_end": 145758,
-            "total_word_count": 127,
-            "non_word_count": 1,
-            "non_bo_word_count": 0
-        }
+        "base_text": "I3CN4623.txt",
+        "character_start": 145001,
+        "character_end": 145998,
+        "total_word_count": 208,
+        "non_word_count": 2,
+        "non_bo_word_count": 0
     },
     "ICB0FDD9A": {
-        "fD7B2.txt": {
-            "base_text": "fD7B2.txt",
-            "character_start": 0,
-            "character_end": 0,
-            "total_word_count": 1,
-            "non_word_count": 0,
-            "non_bo_word_count": 1
-        }
+        "base_text": "fD7B2.txt",
+        "character_start": 401,
+        "character_end": 1178,
+        "total_word_count": 1,
+        "non_word_count": 0,
+        "non_bo_word_count": 1
     },
     "ID194E73E": {
-        "I00EGS1017437.txt": {
-            "base_text": "I00EGS1017437.txt",
-            "character_start": 55176,
-            "character_end": 56247,
-            "total_word_count": 211,
-            "non_word_count": 4,
-            "non_bo_word_count": 5
-        }
+        "base_text": "I00EGS1017430.txt",
+        "character_start": 418959,
+        "character_end": 420973,
+        "total_word_count": 420,
+        "non_word_count": 1,
+        "non_bo_word_count": 14
     },
     "IBF06BC6C": {
-        "I1CZ2501.txt": {
-            "base_text": "I1CZ2501.txt",
-            "character_start": 121448,
-            "character_end": 121855,
-            "total_word_count": 78,
-            "non_word_count": 1,
-            "non_bo_word_count": 0
-        }
+        "base_text": "I1CZ2501.txt",
+        "character_start": 121269,
+        "character_end": 122092,
+        "total_word_count": 162,
+        "non_word_count": 3,
+        "non_bo_word_count": 1
     },
     "I79C6CCCC": {
-        "EBBF.txt": {
-            "base_text": "EBBF.txt",
-            "character_start": 805,
-            "character_end": 2371,
-            "total_word_count": 311,
-            "non_word_count": 0,
-            "non_bo_word_count": 0
-        }
+        "base_text": "EBBF.txt",
+        "character_start": 269,
+        "character_end": 3003,
+        "total_word_count": 546,
+        "non_word_count": 0,
+        "non_bo_word_count": 0
     },
     "O3C4D0D40": {
-        "358E.txt": {
-            "base_text": "358E.txt",
-            "character_start": 0,
-            "character_end": 708,
-            "total_word_count": 135,
-            "non_word_count": 0,
-            "non_bo_word_count": 0
-        }
+        "base_text": "358E.txt",
+        "character_start": 0,
+        "character_end": 708,
+        "total_word_count": 135,
+        "non_word_count": 0,
+        "non_bo_word_count": 0
     },
     "I2E7867A6": {
-        "I3CN6851.txt": {
-            "base_text": "I3CN6851.txt",
-            "character_start": 0,
-            "character_end": 1987,
-            "total_word_count": 371,
-            "non_word_count": 7,
-            "non_bo_word_count": 4
-        }
+        "base_text": "I3CN6851.txt",
+        "character_start": 0,
+        "character_end": 1987,
+        "total_word_count": 371,
+        "non_word_count": 7,
+        "non_bo_word_count": 4
     },
     "I6440520B": {
-        "I3CN6460.txt": {
-            "base_text": "I3CN6460.txt",
-            "character_start": 490620,
-            "character_end": 490917,
-            "total_word_count": 71,
-            "non_word_count": 0,
-            "non_bo_word_count": 1
-        }
+        "base_text": "I3CN6460.txt",
+        "character_start": 490489,
+        "character_end": 491172,
+        "total_word_count": 164,
+        "non_word_count": 1,
+        "non_bo_word_count": 6
     },
     "P000796": {
-        "v066.txt": {
-            "base_text": "v066.txt",
-            "character_start": 691757,
-            "character_end": 692071,
-            "total_word_count": 69,
-            "non_word_count": 2,
-            "non_bo_word_count": 0
-        }
+        "base_text": "v009.txt",
+        "character_start": 746181,
+        "character_end": 747416,
+        "total_word_count": 270,
+        "non_word_count": 11,
+        "non_bo_word_count": 10
     },
     "P000815": {
-        "v001.txt": {
-            "base_text": "v001.txt",
-            "character_start": 105836,
-            "character_end": 106546,
-            "total_word_count": 151,
-            "non_word_count": 1,
-            "non_bo_word_count": 4
-        }
+        "base_text": "v001.txt",
+        "character_start": 105218,
+        "character_end": 107215,
+        "total_word_count": 398,
+        "non_word_count": 1,
+        "non_bo_word_count": 5
     },
     "P000779": {
-        "OCR I1PD95844_E001_vol_78 བསྟན་འགྱུར། ༼དཔེ་བསྡུར་མ༽.txt": {
-            "base_text": "OCR I1PD95844_E001_vol_78 བསྟན་འགྱུར། ༼དཔེ་བསྡུར་མ༽.txt",
-            "character_start": 0,
-            "character_end": 1612,
-            "total_word_count": 207,
-            "non_word_count": 1,
-            "non_bo_word_count": 29
-        }
+        "base_text": "OCR I1PD95844_E001_vol_93 བསྟན་འགྱུར། ༼དཔེ་བསྡུར་མ༽.txt",
+        "character_start": 0,
+        "character_end": 1612,
+        "total_word_count": 207,
+        "non_word_count": 1,
+        "non_bo_word_count": 29
     }
 }
