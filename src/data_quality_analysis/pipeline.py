@@ -1,12 +1,42 @@
 import base64
 import json
 import logging
+import random
 import re
 from pathlib import Path
 
 from botok import WordTokenizer
 from botok.config import Config
 from github import Github
+
+
+def find_base_folder(repo, path=""):
+    """
+    Recursively searches for a directory named 'base' in the GitHub repository.
+
+    Args:
+        repo: Repository object from PyGithub.
+        path: Current path being searched, defaults to the root of the repository.
+
+    Returns:
+        Path to the 'base' directory, or None if not found.
+    """
+    try:
+        contents = repo.get_contents(path)
+        for content in contents:
+            if content.type == "dir":
+                if content.name == "base":  # Check if the directory is named 'base'
+                    return content.path  # Return the path if found
+                else:
+                    # If not, search within this directory
+                    base_folder_path = find_base_folder(repo, content.path)
+                    if base_folder_path:
+                        return base_folder_path
+    except Exception as e:
+        print(e)
+        pass  # Ignore errors and continue searching
+
+    return None  # Return None if 'base' directory is not found
 
 
 def extract_text_from_large_file(repo, file_sha):
@@ -61,69 +91,80 @@ def extract_text_from_files(organization, github_token, pecha_id):
             # Get the repository within the organization
             repo = org.get_repo(repo_name)
 
-            # Construct the base folder path within the repository
-            base_folder_path = f"{pecha_id}.opf/base"
+            predefined_base_folder_path = f"{pecha_id}.opf/base"
+            try:
+                # Attempt to get contents of the predefined base folder
+                base_folder_contents = repo.get_contents(predefined_base_folder_path)
+            except Exception as e:
+                # If the predefined path is not found, search for the base folder
+                base_folder_path = find_base_folder(repo)
+                if not base_folder_path:
+                    print(f"Base folder not found in repository {pecha_id}", e)
+                    return []
+                base_folder_contents = repo.get_contents(base_folder_path)
 
-            # Get the contents of the base folder
-            base_folder_contents = repo.get_contents(base_folder_path)
+            # Filter to keep only text files
+            text_files = [
+                file
+                for file in base_folder_contents
+                if file.type == "file" and file.name.endswith(".txt")
+            ]
 
-            # Iterate through the contents and process text files
-            for file_content in base_folder_contents:
-                if file_content.type == "file" and file_content.name.endswith(".txt"):
-                    if file_content.size > 1000000:  # If file size is larger than 1MB
-                        full_text = extract_text_from_large_file(repo, file_content.sha)
-                    else:
-                        full_text = file_content.decoded_content.decode(
-                            "utf-8", errors="replace"
-                        )
+            if text_files:
+                # Select one random file (or the only file if there's just one)
+                file_content = random.choice(text_files)
 
-                    # Check for the presence of Tibetan script
-                    if re.search(r"[\u0F00-\u0FFF]+", full_text):
-                        if len(full_text) > 3000:  # Check if shed is present
-                            # Split the text into sentences based on the tshek (།)
-                            sentences = full_text.split("།")
-                            length = 10
-                        else:
-                            begin = 0
-                            end = len(full_text)
-                            all_results.append(
-                                (full_text, file_content.name, begin, end)
-                            )
-                            continue
-
-                    else:
-                        # Handle non-Tibetan text segmentation or other logic
-                        sentences = full_text.split(
-                            "\n"
-                        )  # Example: split on nextline for mandarin
-                        length = 5
-
-                    # Determine the midsection of the text
-                    mid_point = len(sentences) // 2
-                    half_span = min(
-                        length, (len(sentences) // 2 + 1)
-                    )  # Half of 30 or half of total sentences if less
-
-                    # Select up to 50 sentences from the midsection
-                    start_indexs = max(0, mid_point - half_span)
-                    end_indexs = min(len(sentences), mid_point + half_span)
-                    selected_sentences = sentences[start_indexs:end_indexs]
-
-                    # Join the sentences back with appropriate delimiter
-                    if re.search(r"[\u0F00-\u0FFF]+", full_text):
-                        if len(full_text) > 3000:  # Check if shed is present
-                            # Split the text into sentences based on the tshek (།)
-                            extracted_text = "།".join(selected_sentences) + "།"
-                            start_index = full_text.find(extracted_text)
-                            end_index = start_index + len(extracted_text)
-
-                    else:
-                        extracted_text = "\n".join(selected_sentences) + "\n"
-                        start_index, end_index = 0, 0
-
-                    all_results.append(
-                        (extracted_text, file_content.name, start_index, end_index)
+                if file_content.size > 1000000:  # If file size is larger than 1MB
+                    full_text = extract_text_from_large_file(repo, file_content.sha)
+                else:
+                    full_text = file_content.decoded_content.decode(
+                        "utf-8", errors="replace"
                     )
+
+                # Check for the presence of Tibetan script
+                if re.search(r"[\u0F00-\u0FFF]+", full_text):
+                    if len(full_text) > 3000:  # Check if shed is present
+                        # Split the text into sentences based on the tshek (།)
+                        sentences = full_text.split("།")
+                        length = 10
+                    else:
+                        begin = 0
+                        end = len(full_text)
+                        all_results.append((full_text, file_content.name, begin, end))
+                        return all_results
+                else:
+                    # Handle non-Tibetan text segmentation or other logic
+                    sentences = full_text.split(
+                        "\n"
+                    )  # Example: split on nextline for mandarin
+                    length = 5
+
+                # Determine the midsection of the text
+                mid_point = len(sentences) // 2
+                half_span = min(
+                    length, (len(sentences) // 2 + 1)
+                )  # Half of 30 or half of total sentences if less
+
+                # Select up to 50 sentences from the midsection
+                start_indexs = max(0, mid_point - half_span)
+                end_indexs = min(len(sentences), mid_point + half_span)
+                selected_sentences = sentences[start_indexs:end_indexs]
+
+                # Join the sentences back with appropriate delimiter
+                if re.search(r"[\u0F00-\u0FFF]+", full_text):
+                    if len(full_text) > 3000:  # Check if shed is present
+                        # Split the text into sentences based on the tshek (།)
+                        extracted_text = "།".join(selected_sentences) + "།"
+                        start_index = full_text.find(extracted_text)
+                        end_index = start_index + len(extracted_text)
+
+                else:
+                    extracted_text = "\n".join(selected_sentences) + "\n"
+                    start_index, end_index = 0, 0
+
+                all_results.append(
+                    (extracted_text, file_content.name, start_index, end_index)
+                )
 
         except Exception as e:
             print(f"Error in accessing repository {repo_name}: {e}")
@@ -252,7 +293,7 @@ def main():
     Returns:
         None (Outputs are saved to file and logged)
     """
-    github_token = "your personal github token"
+    github_token = "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"
     organization_name = "OpenPecha-Data"
 
     # Example: List of Pecha IDs to process
@@ -294,7 +335,9 @@ def main():
     results = process_pechas(pecha_ids, github_token, organization_name)
 
     # Output the results to a JSON file
-    output_file = "../..data/pechas.json"
+    output_file = (
+        "/home/gangagyatso/Desktop/project4/pechadata_analysis/data/pechas.json"
+    )
     with open(output_file, "w", encoding="utf-8") as file:
         json.dump(results, file, ensure_ascii=False, indent=4)
 
