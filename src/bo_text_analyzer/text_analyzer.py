@@ -1,3 +1,6 @@
+from pathlib import Path
+from botok import WordTokenizer
+from botok.config import Config
 
 class TextAnalyzer:
     def __init__(self, preminum_threshold):
@@ -9,7 +12,9 @@ class TextAnalyzer:
         pass
 
     def tokenize_text(self, text):
-        pass
+        wt = WordTokenizer(config=Config(dialect_name="general", base_path=Path.home()))
+        tokens = wt.tokenize(text, split_affixes=False)
+        return tokens
     
     def count_non_words(self, tokens):
         pass
@@ -42,10 +47,3 @@ class TextAnalyzer:
             cur_file_report['non_bo_word_percentage'] = non_bo_word_percentage
             cur_file_report['is_premium'] = is_premium
             self.text_report[text_file_name] = cur_file_report
-
-        
-
-    
-        
-
-        
