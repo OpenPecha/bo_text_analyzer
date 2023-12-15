@@ -3,7 +3,7 @@ from pathlib import Path
 from botok import WordTokenizer
 from botok.config import Config
 
-from data_quality_analysis.pipeline import analyze_tokens
+from bo_text_analyzer.pipeline import analyze_tokens
 
 
 def test_analyze_tokens():
