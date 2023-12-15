@@ -26,7 +26,13 @@ class TextAnalyzer:
         return non_word_count
 
     def count_non_bo_words(self, tokens):
-        pass
+        non_bo_word_count = 0
+        for token in tokens:
+            if token.chunk_type in ["LATIN", "CJK", "OTHER"] and (
+                token.chunk_type != "OTHER" or not token.skrt
+            ):
+                non_bo_word_count += 1
+        return non_bo_word_count
 
     def check_is_preminum(self, non_word_percentage, non_bo_word_percentage):
         if (
