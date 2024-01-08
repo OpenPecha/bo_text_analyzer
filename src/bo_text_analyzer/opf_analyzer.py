@@ -1,5 +1,3 @@
-import os
-
 from openpecha.core.pecha import OpenPechaGitRepo
 
 from bo_text_analyzer.text_analyzer import TextAnalyzer
@@ -9,10 +7,7 @@ class OpfAnalyzer(TextAnalyzer):
     def __init__(self, premium_threshold, opf_id):
         super().__init__(premium_threshold)
         self.opf_id = opf_id
-        # Set environment variables
-        os.environ["GITHUB_TOKEN"] = "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"
-        os.environ["OPENPECHA_DATA_GITHUB_ORG"] = "OpenPecha-Data"
-        os.environ["GITHUB_USERNAME"] = "gangagyatso4364"
+        self.opf_report = {}
 
     def get_base_text(self):
         try:
@@ -29,3 +24,13 @@ class OpfAnalyzer(TextAnalyzer):
     def get_text(self):
         base_texts = self.get_base_text()
         return base_texts
+
+    def analyze(self):
+        return super().analyze()
+
+    def truncate_text(self, text):
+        pass
+
+    def get_opf_report(self):
+        self.opf_report[self.opf_id] = self.text_report
+        return self.opf_report
