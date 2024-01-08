@@ -10,7 +10,7 @@ class OpfAnalyzer(TextAnalyzer):
         super().__init__(premium_threshold)
         self.opf_id = opf_id
         # Set environment variables
-        os.environ["GITHUB_TOKEN"] = "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"
+        os.environ["GITHUB_TOKEN"] = "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"
         os.environ["OPENPECHA_DATA_GITHUB_ORG"] = "OpenPecha-Data"
         os.environ["GITHUB_USERNAME"] = "gangagyatso4364"
 
@@ -25,3 +25,7 @@ class OpfAnalyzer(TextAnalyzer):
         except Exception as e:
             print(f"An error occurred while processing Pecha ID {self.opf_id}: {e}")
             return None
+
+    def get_text(self):
+        base_texts = self.get_base_text()
+        return base_texts

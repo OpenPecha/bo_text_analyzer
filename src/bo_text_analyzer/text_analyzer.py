@@ -6,7 +6,7 @@ from botok.config import Config
 
 class TextAnalyzer:
     def __init__(self, preminum_threshold):
-        self.text = {}
+        self.texts = {}
         self.text_report = {}
         self.preminum_threshold = preminum_threshold
 
@@ -43,8 +43,8 @@ class TextAnalyzer:
         return True
 
     def analyze(self):
-        self.text = self.get_text()
-        for text_file_name, text in self.text.items():
+        self.texts = self.get_text()
+        for text_file_name, text in self.texts.items():
             cur_file_report = {}
             tokens = self.tokenize_text(text)
             total_words = len(tokens)
@@ -62,4 +62,5 @@ class TextAnalyzer:
             cur_file_report["non_word_percentage"] = non_word_percentage
             cur_file_report["non_bo_word_percentage"] = non_bo_word_percentage
             cur_file_report["is_premium"] = is_premium
-            self.text_report[text_file_name] = cur_file_report
+            cur_file_report["file_name"] = text_file_name
+            self.text_report = cur_file_report
