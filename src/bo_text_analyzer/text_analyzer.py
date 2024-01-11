@@ -6,10 +6,10 @@ from botok.config import Config
 
 
 class TextAnalyzer:
-    def __init__(self, preminum_threshold):
-        self.texts = {}
+    def __init__(self, non_word_threshold, no_bo_word_threshold):
         self.text_report = {}
-        self.preminum_threshold = preminum_threshold
+        self.non_word_preminum_threshold = non_word_threshold
+        self.non_bo_word_preminum_threshold = no_bo_word_threshold
 
     def get_text(self):
         pass
@@ -37,33 +37,36 @@ class TextAnalyzer:
 
     def check_is_preminum(self, non_word_percentage, non_bo_word_percentage):
         if (
-            non_word_percentage > self.preminum_threshold
-            or non_bo_word_percentage > self.preminum_threshold
+            non_word_percentage > self.non_word_preminum_threshold
+            or non_bo_word_percentage > self.non_bo_word_preminum_threshold
         ):
             return False
         return True
 
     def analyze(self):
-        self.texts = self.get_text()
-        for text_file_name, text in self.texts.items():
-            start_time = time.time()  # Start timer
-            cur_file_report = {}
-            tokens = self.tokenize_text(text)
-            total_words = len(tokens)
-            total_non_words = self.count_non_words(tokens)
-            total_non_bo_words = self.count_non_bo_words(tokens)
-            non_word_percentage = total_non_words / total_words
-            non_bo_word_percentage = total_non_bo_words / total_words
-            is_premium = self.check_is_preminum(
-                non_word_percentage, non_bo_word_percentage
-            )
-            end_time = time.time()  # End timer
-            time_taken = end_time - start_time
-            cur_file_report["total_words"] = total_words
-            cur_file_report["total_non_words"] = total_non_words
-            cur_file_report["total_non_bo_words"] = total_non_bo_words
-            cur_file_report["non_word_percentage"] = non_word_percentage
-            cur_file_report["non_bo_word_percentage"] = non_bo_word_percentage
-            cur_file_report["is_premium"] = is_premium
-            cur_file_report["time_taken"] = int(time_taken)
-            self.text_report[text_file_name] = cur_file_report
+        text_objs = self.get_text()
+        for text_obj in text_objs:
+            for text_file_name, text in text_obj.texts.items():
+                start_time = time.time()  # Start timer
+                cur_file_report = {}
+                tokens = self.tokenize_text(text)
+                total_words = len(tokens)
+                total_non_words = self.count_non_words(tokens)
+                total_non_bo_words = self.count_non_bo_words(tokens)
+                non_word_percentage = total_non_words / total_words
+                non_bo_word_percentage = total_non_bo_words / total_words
+                is_premium = self.check_is_preminum(
+                    non_word_percentage, non_bo_word_percentage
+                )
+                end_time = time.time()  # End timer
+                time_taken = end_time - start_time
+                cur_file_report["total_words"] = total_words
+                cur_file_report["total_non_words"] = total_non_words
+                cur_file_report["total_non_bo_words"] = total_non_bo_words
+                cur_file_report["non_word_percentage"] = non_word_percentage
+                cur_file_report["non_bo_word_percentage"] = non_bo_word_percentage
+                cur_file_report["is_premium"] = is_premium
+                cur_file_report["time_taken"] = int(time_taken)
+                cur_file_report["start"] = text_obj.start
+                cur_file_report["end"] = text_obj.end
+                self.text_report[text_file_name] = cur_file_report
