@@ -5,11 +5,14 @@ from bo_text_analyzer.text_analyzer import TextAnalyzer
 
 
 class OpfAnalyzer(TextAnalyzer):
-    def __init__(self, non_word_threshold, no_bo_word_threshold, opf_id):
+    def __init__(
+        self, non_word_threshold, no_bo_word_threshold, opf_id=None, opf_path=None
+    ):
         super().__init__(non_word_threshold, no_bo_word_threshold)
         self.opf_id = opf_id
         self.opf_report = {}
-        self.opf = OpenPechaGitRepo(pecha_id=self.opf_id)
+        self.opf_path = opf_path
+        self.opf = OpenPechaGitRepo(pecha_id=self.opf_id, path=self.opf_path)
 
     def get_base_text(self):
         try:
@@ -23,7 +26,7 @@ class OpfAnalyzer(TextAnalyzer):
                 text_objs.append(text_obj)
             return text_objs
         except Exception as e:
-            print(f"An error occurred while processing Pecha ID {self.opf_id}: {e}")
+            print(f"An error occurred while processing Pecha : {e}")
             return None
 
     def get_text(self):
@@ -83,7 +86,7 @@ class OpfAnalyzer(TextAnalyzer):
                         if ann_obj.get("imgnum") == total_pages - 2:
                             end = ann_obj.get("span").get("end")
         except Exception as e:
-            print(f"pagination layer can't be found for Pecha ID {self.opf_id}: {e}")
+            print(f"pagination layer can't be found for Pecha : {e}")
             pass
         return begin, end
 

@@ -8,7 +8,7 @@ def main():
     plain_text_analyzer = PlainTextAnalyzer(
         non_word_threshold=0.05,
         no_bo_word_threshold=0.03,
-        file_path="path/to/text/file",
+        file_path="/home/gangagyatso/Desktop/project8/bo_text_analyzer/tests/test_data/text_file.txt",
     )
     plain_text_analyzer.analyze()
 
