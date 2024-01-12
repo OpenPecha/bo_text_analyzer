@@ -93,9 +93,10 @@ class OpfAnalyzer(TextAnalyzer):
         begin, end = self.get_begin_end_index(
             intro_page=intro_page, total_pages=page_length, base_name=base_name
         )
-        if end == -1:
-            end = len(text_obj.texts[base_name])
-        text_obj.texts[base_name] = text_obj.texts[base_name][begin:end]
+        if begin == 0 and end == -1:
+            text_obj = text_obj.texts[base_name][:]
+        else:
+            text_obj.texts[base_name] = text_obj.texts[base_name][begin:end]
         text_obj.start = begin
         text_obj.end = end
         return text_obj

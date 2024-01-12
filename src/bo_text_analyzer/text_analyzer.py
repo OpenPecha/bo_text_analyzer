@@ -43,6 +43,32 @@ class TextAnalyzer:
             return False
         return True
 
+    def trim_text(self, tokens, text_obj, file_name):
+        # Get the full text
+        text = text_obj.texts[file_name]
+        # Calculate the token indices for 25% and 75% of the text
+        start_token_index = int(len(tokens) * 0.25)
+        end_token_index = int(len(tokens) * 0.75)
+
+        if start_token_index < len(tokens) and end_token_index < len(tokens):
+            # Get the character index of these tokens in the full text
+            start_char_index = tokens[start_token_index].start
+            end_char_index = tokens[end_token_index].start + tokens[end_token_index].len
+
+            # Extract the trimmed text
+            trimmed_text = text[start_char_index:end_char_index]
+            end_token_index = end_token_index + 1
+            trimmed_tokens = tokens[start_token_index:end_token_index]
+
+            # Update text_obj
+            text_obj.texts[file_name] = trimmed_text
+            text_obj.start = start_char_index
+            text_obj.end = end_char_index
+        else:
+            # If the calculated indices are out of range, handle the case appropriately
+            print("Calculated token indices are out of the range of the token list.")
+        return trimmed_tokens, text_obj
+
     def analyze(self):
         text_objs = self.get_text()
         for text_obj in text_objs:
@@ -50,6 +76,11 @@ class TextAnalyzer:
                 start_time = time.time()  # Start timer
                 cur_file_report = {}
                 tokens = self.tokenize_text(text)
+                if text_obj.start == 0 and text_obj.end == -1:
+                    if len(tokens) > 2000:
+                        tokens, text_obj = self.trim_text(
+                            tokens, text_obj, text_file_name
+                        )
                 total_words = len(tokens)
                 total_non_words = self.count_non_words(tokens)
                 total_non_bo_words = self.count_non_bo_words(tokens)

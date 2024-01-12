@@ -6,11 +6,11 @@ from bo_text_analyzer.opf_analyzer import OpfAnalyzer
 
 def main():
     # Set environment variables
-    os.environ["GITHUB_TOKEN"] = "personal-access-token"
+    os.environ["GITHUB_TOKEN"] = "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"
     os.environ["OPENPECHA_DATA_GITHUB_ORG"] = "OpenPecha-Data"
-    os.environ["GITHUB_USERNAME"] = "github-username"
+    os.environ["GITHUB_USERNAME"] = "gangagyatso4364"
     # Set the pecha ID and premium threshold
-    pecha_id = "IFF5475DD"
+    pecha_id = "I229815A9"
 
     # Create an instance of OpfAnalyzer
     opf_analyzer = OpfAnalyzer(
