@@ -56,8 +56,8 @@ class TextAnalyzer:
 
             # Extract the trimmed text
             trimmed_text = text[start_char_index:end_char_index]
-            end_token_index = end_token_index + 1
-            trimmed_tokens = tokens[start_token_index:end_token_index]
+            last_token = end_token_index + 1
+            trimmed_tokens = tokens[start_token_index:last_token]
 
             # Update text_obj
             text_obj.texts[file_name] = trimmed_text

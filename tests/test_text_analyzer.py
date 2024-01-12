@@ -1,6 +1,10 @@
+from pathlib import Path
+
+from config import PLAIN_TEXT_DATA
+
 from bo_text_analyzer.text_analyzer import TextAnalyzer
 
-text = "abdul kalamའཁྱེད་ལ་སུན་པོ་ཀཟོས་པར་དགོངས་དག་ཞུ་ཨུམ་ཨུམ་་་། ()$%322 ༣༢༢་�� 你好吗 कैसे ཨོཾ་མ་ཎི་པདྨེ་ཧཱུྃ"
+text = Path(PLAIN_TEXT_DATA).read_text()
 ta = TextAnalyzer(non_word_threshold=0.05, no_bo_word_threshold=0.03)
 tokens = ta.tokenize_text(text)
 total_words = len(tokens)
