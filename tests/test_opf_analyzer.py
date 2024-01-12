@@ -1,7 +1,10 @@
 import os
 
-from credentials import GITHUB_TOKEN, GITHUB_USERNAME, OPENPECHA_DATA_GITHUB_ORG
-
+from bo_text_analyzer.credentials import (
+    GITHUB_TOKEN,
+    GITHUB_USERNAME,
+    OPENPECHA_DATA_GITHUB_ORG,
+)
 from bo_text_analyzer.opf_analyzer import OpfAnalyzer
 
 # Set environment variables
