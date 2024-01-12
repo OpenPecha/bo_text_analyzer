@@ -7,11 +7,6 @@ github_token = os.getenv("GITHUB_TOKEN")
 openpecha_data_github_org = os.getenv("OPENPECHA_DATA_GITHUB_ORG")
 github_username = os.getenv("GITHUB_USERNAME")
 
-# Ensure that the necessary environment variables are set
-assert github_token is not None, "GITHUB_TOKEN is not set"
-assert openpecha_data_github_org is not None, "OPENPECHA_DATA_GITHUB_ORG is not set"
-assert github_username is not None, "GITHUB_USERNAME is not set"
-
 pecha_id = "IFF5475DD"
 
 
