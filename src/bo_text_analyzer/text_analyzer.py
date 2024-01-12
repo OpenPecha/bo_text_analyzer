@@ -1,4 +1,3 @@
-import time
 from pathlib import Path
 
 from botok import WordTokenizer
@@ -73,14 +72,16 @@ class TextAnalyzer:
         text_objs = self.get_text()
         for text_obj in text_objs:
             for text_file_name, text in text_obj.texts.items():
-                start_time = time.time()  # Start timer
                 cur_file_report = {}
                 tokens = self.tokenize_text(text)
                 if text_obj.start == 0 and text_obj.end == -1:
-                    if len(tokens) > 2000:
+                    if len(tokens) > 1500:
                         tokens, text_obj = self.trim_text(
                             tokens, text_obj, text_file_name
                         )
+                    else:
+                        text_obj.start = 0
+                        text_obj.end = len(text)
                 total_words = len(tokens)
                 total_non_words = self.count_non_words(tokens)
                 total_non_bo_words = self.count_non_bo_words(tokens)
@@ -89,15 +90,12 @@ class TextAnalyzer:
                 is_premium = self.check_is_preminum(
                     non_word_percentage, non_bo_word_percentage
                 )
-                end_time = time.time()  # End timer
-                time_taken = end_time - start_time
                 cur_file_report["total_words"] = total_words
                 cur_file_report["total_non_words"] = total_non_words
                 cur_file_report["total_non_bo_words"] = total_non_bo_words
                 cur_file_report["non_word_percentage"] = non_word_percentage
                 cur_file_report["non_bo_word_percentage"] = non_bo_word_percentage
                 cur_file_report["is_premium"] = is_premium
-                cur_file_report["time_taken"] = int(time_taken)
                 cur_file_report["start"] = text_obj.start
                 cur_file_report["end"] = text_obj.end
                 self.text_report[text_file_name] = cur_file_report
