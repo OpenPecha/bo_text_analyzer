@@ -1,12 +1,14 @@
 import os
 
+from credentials import GITHUB_TOKEN, GITHUB_USERNAME, OPENPECHA_DATA_GITHUB_ORG
+
 from bo_text_analyzer.opf_analyzer import OpfAnalyzer
 
-# Fetch environment variables
-github_token = os.getenv("GITHUB_TOKEN")
-openpecha_data_github_org = os.getenv("OPENPECHA_DATA_GITHUB_ORG")
-github_username = os.getenv("GITHUB_USERNAME")
-
+# Set environment variables
+os.environ["GITHUB_TOKEN"] = GITHUB_TOKEN
+os.environ["OPENPECHA_DATA_GITHUB_ORG"] = OPENPECHA_DATA_GITHUB_ORG
+os.environ["GITHUB_USERNAME"] = GITHUB_USERNAME
+# Set the pecha ID and premium threshold
 pecha_id = "IFF5475DD"
 
 
