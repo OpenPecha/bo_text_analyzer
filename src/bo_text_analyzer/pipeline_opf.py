@@ -12,7 +12,7 @@ def main():
         non_word_threshold=0.05,
         no_bo_word_threshold=0.03,
         opf_id=pecha_id,
-        opf_path="/home/gangagyatso/Desktop/project8/bo_text_analyzer/data/IFF5475DD.opf",
+        opf_path="path to opf directory",
     )
 
     # Fetch and analyze the texts

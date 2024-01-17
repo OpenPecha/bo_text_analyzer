@@ -9,13 +9,15 @@ class TextAnalyzer:
         self.text_report = {}
         self.non_word_preminum_threshold = non_word_threshold
         self.non_bo_word_preminum_threshold = no_bo_word_threshold
+        self.wt = WordTokenizer(
+            config=Config(dialect_name="general", base_path=Path.home())
+        )
 
     def get_text(self):
         pass
 
     def tokenize_text(self, text):
-        wt = WordTokenizer(config=Config(dialect_name="general", base_path=Path.home()))
-        tokens = wt.tokenize(text, split_affixes=False)
+        tokens = self.wt.tokenize(text, split_affixes=False)
         return tokens
 
     def count_non_words(self, tokens):
