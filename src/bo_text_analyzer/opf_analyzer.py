@@ -44,12 +44,14 @@ class OpfAnalyzer(TextAnalyzer):
             intro_page = self.opf.meta.bases[base_name]["source_metadata"][
                 "volume_pages_intro"
             ]
+            return intro_page
         except Exception:
             try:
                 # Second attempt to get intro page
                 intro_page = self.opf.meta.source_metadata[base_name][
                     "volume_pages_intro"
                 ]
+                return intro_page
             except Exception:
                 pass
         return intro_page
@@ -62,14 +64,24 @@ class OpfAnalyzer(TextAnalyzer):
             page_length = self.opf.meta.bases[base_name]["source_metadata"][
                 "total_pages"
             ]
+            return page_length
         except Exception:
             try:
                 # Second attempt to get page length
                 page_length = self.opf.meta.source_metadata["base"][base_name][
                     "total_pages"
                 ]
+                return page_length
             except Exception:
-                pass
+                try:
+                    # Third attempt to get page length
+                    volume_dict = self.opf.meta.source_metadata["volumes"]
+                    for v_id, v_obj in volume_dict.items():
+                        if v_obj["base_file"] == f"{base_name}.txt":
+                            page_length = v_obj["total_pages"]
+                            return page_length
+                except Exception:
+                    pass
         return page_length
 
     def get_begin_end_index(self, intro_page, total_pages, base_name):
@@ -83,22 +95,21 @@ class OpfAnalyzer(TextAnalyzer):
                     for ann_id, ann_obj in layer_obj.annotations.items():
                         if ann_obj.get("imgnum") == intro_page + 1:
                             begin = ann_obj.get("span").get("start")
-                        if ann_obj.get("imgnum") == total_pages - 2:
+                        if ann_obj.get("imgnum") == total_pages - intro_page:
                             end = ann_obj.get("span").get("end")
+                    return begin, end
         except Exception as e:
             print(f"pagination layer can't be found for Pecha : {e}")
             pass
         return begin, end
 
-    def truncate_text(self, text_obj, base_name):
+    def truncate_text(self, text_obj: Text, base_name):
         intro_page = self.get_intro_page(base_name)
         page_length = self.get_page_length(base_name)
         begin, end = self.get_begin_end_index(
             intro_page=intro_page, total_pages=page_length, base_name=base_name
         )
-        if begin == 0 and end == -1:
-            text_obj = text_obj.texts[base_name][:]
-        else:
+        if begin != 0 and end != -1:
             text_obj.texts[base_name] = text_obj.texts[base_name][begin:end]
         text_obj.start = begin
         text_obj.end = end

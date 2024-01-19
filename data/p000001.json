@@ -1,0 +1,1034 @@
+{
+    "P000001": {
+        "v060": {
+            "total_words": 183142,
+            "total_non_words": 463,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.002528092955193238,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 920293
+        },
+        "v061": {
+            "total_words": 184021,
+            "total_non_words": 423,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.002298650697474745,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 935053
+        },
+        "v011": {
+            "total_words": 219658,
+            "total_non_words": 640,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.002913620264228938,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1038621
+        },
+        "v009": {
+            "total_words": 206460,
+            "total_non_words": 904,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.004378572120507605,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 984229
+        },
+        "v021": {
+            "total_words": 227358,
+            "total_non_words": 843,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0037078088301269363,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1130711
+        },
+        "v070": {
+            "total_words": 195622,
+            "total_non_words": 574,
+            "total_non_bo_words": 2,
+            "non_word_percentage": 0.0029342303012953553,
+            "non_bo_word_percentage": 1.0223798959217265e-05,
+            "is_premium": true,
+            "start": 0,
+            "end": 979441
+        },
+        "v084": {
+            "total_words": 177182,
+            "total_non_words": 907,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.005119030149789482,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 863165
+        },
+        "v101": {
+            "total_words": 176390,
+            "total_non_words": 1341,
+            "total_non_bo_words": 1,
+            "non_word_percentage": 0.007602471795453257,
+            "non_bo_word_percentage": 5.6692556267362095e-06,
+            "is_premium": true,
+            "start": 0,
+            "end": 807219
+        },
+        "v023": {
+            "total_words": 206164,
+            "total_non_words": 1538,
+            "total_non_bo_words": 3,
+            "non_word_percentage": 0.007460080324401932,
+            "non_bo_word_percentage": 1.4551522089210531e-05,
+            "is_premium": true,
+            "start": 0,
+            "end": 1054164
+        },
+        "v081": {
+            "total_words": 195155,
+            "total_non_words": 613,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003141092977376957,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 872153
+        },
+        "v003": {
+            "total_words": 186275,
+            "total_non_words": 751,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0040316736008589454,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 905832
+        },
+        "v031": {
+            "total_words": 182794,
+            "total_non_words": 206,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0011269516504918105,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 916933
+        },
+        "v010": {
+            "total_words": 201695,
+            "total_non_words": 639,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0031681499293487693,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 967211
+        },
+        "v007": {
+            "total_words": 182476,
+            "total_non_words": 545,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0029866941405993115,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 883452
+        },
+        "v067": {
+            "total_words": 196110,
+            "total_non_words": 492,
+            "total_non_bo_words": 2,
+            "non_word_percentage": 0.002508796083830503,
+            "non_bo_word_percentage": 1.019835806435164e-05,
+            "is_premium": true,
+            "start": 0,
+            "end": 980252
+        },
+        "v028": {
+            "total_words": 214173,
+            "total_non_words": 386,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0018022813333146569,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1082544
+        },
+        "v041": {
+            "total_words": 94229,
+            "total_non_words": 178,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0018890150590582517,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 236258,
+            "end": 703926
+        },
+        "v045": {
+            "total_words": 212809,
+            "total_non_words": 735,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.00345380129599782,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1066344
+        },
+        "v027": {
+            "total_words": 230026,
+            "total_non_words": 394,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0017128498517558885,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1157820
+        },
+        "v103": {
+            "total_words": 47445,
+            "total_non_words": 340,
+            "total_non_bo_words": 1,
+            "non_word_percentage": 0.007166192433343872,
+            "non_bo_word_percentage": 2.1077036568658446e-05,
+            "is_premium": true,
+            "start": 119135,
+            "end": 357222
+        },
+        "v093": {
+            "total_words": 195123,
+            "total_non_words": 998,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.005114722508366518,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 945080
+        },
+        "v048": {
+            "total_words": 177454,
+            "total_non_words": 252,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0014200863322325786,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 891654
+        },
+        "v073": {
+            "total_words": 198512,
+            "total_non_words": 514,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0025892641250906748,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 957470
+        },
+        "v072": {
+            "total_words": 193558,
+            "total_non_words": 538,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.002779528616745368,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 931760
+        },
+        "v036": {
+            "total_words": 201860,
+            "total_non_words": 421,
+            "total_non_bo_words": 2,
+            "non_word_percentage": 0.002085603883879917,
+            "non_bo_word_percentage": 9.907856930545924e-06,
+            "is_premium": true,
+            "start": 0,
+            "end": 1077002
+        },
+        "v019": {
+            "total_words": 229916,
+            "total_non_words": 869,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0037796412602863656,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1137131
+        },
+        "v064": {
+            "total_words": 191168,
+            "total_non_words": 521,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0027253515232674923,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 960843
+        },
+        "v080": {
+            "total_words": 223045,
+            "total_non_words": 790,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.00354188616646865,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1040199
+        },
+        "v033": {
+            "total_words": 170937,
+            "total_non_words": 241,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.001409876153202642,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 905618
+        },
+        "v038": {
+            "total_words": 201061,
+            "total_non_words": 556,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0027653299247492056,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1056919
+        },
+        "v044": {
+            "total_words": 182048,
+            "total_non_words": 349,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0019170768149059589,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 918286
+        },
+        "v004": {
+            "total_words": 192845,
+            "total_non_words": 466,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.002416448443050118,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 933287
+        },
+        "v099": {
+            "total_words": 179989,
+            "total_non_words": 1064,
+            "total_non_bo_words": 2,
+            "non_word_percentage": 0.005911472367755808,
+            "non_bo_word_percentage": 1.1111790164954525e-05,
+            "is_premium": true,
+            "start": 0,
+            "end": 845279
+        },
+        "v066": {
+            "total_words": 190644,
+            "total_non_words": 761,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003991733282977697,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 933857
+        },
+        "v055": {
+            "total_words": 198089,
+            "total_non_words": 348,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.001756786091100465,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 993629
+        },
+        "v013": {
+            "total_words": 198012,
+            "total_non_words": 577,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0029139648102135224,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 932635
+        },
+        "v005": {
+            "total_words": 188928,
+            "total_non_words": 715,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0037845105013550135,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 904132
+        },
+        "v029": {
+            "total_words": 184734,
+            "total_non_words": 164,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0008877629456407591,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 923747
+        },
+        "v065": {
+            "total_words": 186637,
+            "total_non_words": 302,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0016181143074524343,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 935846
+        },
+        "v100": {
+            "total_words": 85767,
+            "total_non_words": 388,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.004523884477712873,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 208819,
+            "end": 623786
+        },
+        "v052": {
+            "total_words": 214308,
+            "total_non_words": 464,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0021651081620844767,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1037072
+        },
+        "v091": {
+            "total_words": 197146,
+            "total_non_words": 1629,
+            "total_non_bo_words": 3,
+            "non_word_percentage": 0.008262911750682235,
+            "non_bo_word_percentage": 1.5217148712121981e-05,
+            "is_premium": true,
+            "start": 0,
+            "end": 869503
+        },
+        "v083": {
+            "total_words": 218554,
+            "total_non_words": 1119,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.005120016105859422,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 929970
+        },
+        "v032": {
+            "total_words": 185109,
+            "total_non_words": 197,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0010642378274422098,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 932072
+        },
+        "v085": {
+            "total_words": 171156,
+            "total_non_words": 584,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0034120918927761806,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 855993
+        },
+        "v040": {
+            "total_words": 180826,
+            "total_non_words": 223,
+            "total_non_bo_words": 2,
+            "non_word_percentage": 0.0012332297346620508,
+            "non_bo_word_percentage": 1.106035636468207e-05,
+            "is_premium": true,
+            "start": 0,
+            "end": 911865
+        },
+        "v008": {
+            "total_words": 171015,
+            "total_non_words": 683,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003993801713300003,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 822544
+        },
+        "v012": {
+            "total_words": 191996,
+            "total_non_words": 522,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0027188066418050378,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 911313
+        },
+        "v102": {
+            "total_words": 148530,
+            "total_non_words": 611,
+            "total_non_bo_words": 1,
+            "non_word_percentage": 0.004113647074665051,
+            "non_bo_word_percentage": 6.732646603379789e-06,
+            "is_premium": true,
+            "start": 374696,
+            "end": 1111227
+        },
+        "v049": {
+            "total_words": 182175,
+            "total_non_words": 300,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0016467682173734047,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 912417
+        },
+        "v006": {
+            "total_words": 182582,
+            "total_non_words": 716,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003921525670657567,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 873440
+        },
+        "v018": {
+            "total_words": 223752,
+            "total_non_words": 3010,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.013452393721620366,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1121188
+        },
+        "v054": {
+            "total_words": 185137,
+            "total_non_words": 525,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0028357378589909093,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 903297
+        },
+        "v090": {
+            "total_words": 193397,
+            "total_non_words": 1014,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.005243100978815597,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 886388
+        },
+        "v001": {
+            "total_words": 193152,
+            "total_non_words": 360,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.001863817097415507,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 933539
+        },
+        "v086": {
+            "total_words": 100343,
+            "total_non_words": 351,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003498001853642008,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 254663,
+            "end": 739934
+        },
+        "v037": {
+            "total_words": 209111,
+            "total_non_words": 305,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0014585555040146142,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1120900
+        },
+        "v079": {
+            "total_words": 185942,
+            "total_non_words": 552,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0029686676490518547,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 878744
+        },
+        "v059": {
+            "total_words": 194772,
+            "total_non_words": 582,
+            "total_non_bo_words": 2,
+            "non_word_percentage": 0.0029881091738032163,
+            "non_bo_word_percentage": 1.0268416404822048e-05,
+            "is_premium": true,
+            "start": 0,
+            "end": 966152
+        },
+        "v022": {
+            "total_words": 204180,
+            "total_non_words": 1408,
+            "total_non_bo_words": 2,
+            "non_word_percentage": 0.00689587618767754,
+            "non_bo_word_percentage": 9.795278675678323e-06,
+            "is_premium": true,
+            "start": 0,
+            "end": 1040620
+        },
+        "v087": {
+            "total_words": 202591,
+            "total_non_words": 842,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.004156156986243219,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 961633
+        },
+        "v057": {
+            "total_words": 207496,
+            "total_non_words": 497,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0023952268959401626,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1055355
+        },
+        "v088": {
+            "total_words": 225922,
+            "total_non_words": 737,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003262187834739423,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1031709
+        },
+        "v078": {
+            "total_words": 207559,
+            "total_non_words": 817,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003936230180334266,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 951848
+        },
+        "v069": {
+            "total_words": 201576,
+            "total_non_words": 628,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003115450252014129,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 967863
+        },
+        "v089": {
+            "total_words": 165365,
+            "total_non_words": 446,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.002697064070389744,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 819424
+        },
+        "v046": {
+            "total_words": 179320,
+            "total_non_words": 581,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003240017845192951,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 878040
+        },
+        "v035": {
+            "total_words": 218861,
+            "total_non_words": 408,
+            "total_non_bo_words": 2,
+            "non_word_percentage": 0.0018641969103677678,
+            "non_bo_word_percentage": 9.138220148861607e-06,
+            "is_premium": true,
+            "start": 0,
+            "end": 1141813
+        },
+        "v017": {
+            "total_words": 236382,
+            "total_non_words": 3496,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.014789620191046696,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1132209
+        },
+        "v002": {
+            "total_words": 202018,
+            "total_non_words": 569,
+            "total_non_bo_words": 2,
+            "non_word_percentage": 0.002816580700729638,
+            "non_bo_word_percentage": 9.900107911176231e-06,
+            "is_premium": true,
+            "start": 0,
+            "end": 971955
+        },
+        "v076": {
+            "total_words": 185702,
+            "total_non_words": 649,
+            "total_non_bo_words": 1,
+            "non_word_percentage": 0.003494846582158512,
+            "non_bo_word_percentage": 5.384971621199556e-06,
+            "is_premium": true,
+            "start": 0,
+            "end": 869304
+        },
+        "v071": {
+            "total_words": 195880,
+            "total_non_words": 459,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0023432713906473353,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 953864
+        },
+        "v075": {
+            "total_words": 188659,
+            "total_non_words": 352,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0018658002003614988,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 916520
+        },
+        "v098": {
+            "total_words": 189861,
+            "total_non_words": 731,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.003850185135441191,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 914763
+        },
+        "v094": {
+            "total_words": 177920,
+            "total_non_words": 1911,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.01074078237410072,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 822291
+        },
+        "v039": {
+            "total_words": 171183,
+            "total_non_words": 553,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0032304609686709543,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 842852
+        },
+        "v025": {
+            "total_words": 211448,
+            "total_non_words": 1214,
+            "total_non_bo_words": 1,
+            "non_word_percentage": 0.005741364307063675,
+            "non_bo_word_percentage": 4.729295145851462e-06,
+            "is_premium": true,
+            "start": 0,
+            "end": 1052665
+        },
+        "v015": {
+            "total_words": 224679,
+            "total_non_words": 2138,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.009515798094169905,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1147763
+        },
+        "v077": {
+            "total_words": 240927,
+            "total_non_words": 528,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.002191535195308122,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1145209
+        },
+        "v043": {
+            "total_words": 186799,
+            "total_non_words": 366,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.001959325264053876,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 942412
+        },
+        "v068": {
+            "total_words": 192733,
+            "total_non_words": 638,
+            "total_non_bo_words": 1,
+            "non_word_percentage": 0.003310278986992368,
+            "non_bo_word_percentage": 5.188525057981767e-06,
+            "is_premium": true,
+            "start": 0,
+            "end": 941795
+        },
+        "v050": {
+            "total_words": 179659,
+            "total_non_words": 410,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.002282101091512254,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 911487
+        },
+        "v095": {
+            "total_words": 196228,
+            "total_non_words": 1295,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.006599465927390587,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 915359
+        },
+        "v014": {
+            "total_words": 218654,
+            "total_non_words": 630,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0028812644634902632,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1118370
+        },
+        "v097": {
+            "total_words": 208156,
+            "total_non_words": 501,
+            "total_non_bo_words": 3,
+            "non_word_percentage": 0.0024068487096216297,
+            "non_bo_word_percentage": 1.4412267722285208e-05,
+            "is_premium": true,
+            "start": 0,
+            "end": 1012710
+        },
+        "v026": {
+            "total_words": 222743,
+            "total_non_words": 327,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0014680596023219584,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1110782
+        },
+        "v056": {
+            "total_words": 190054,
+            "total_non_words": 495,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0026045229250634032,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 940649
+        },
+        "v016": {
+            "total_words": 222397,
+            "total_non_words": 3551,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.015966942000116908,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1114896
+        },
+        "v092": {
+            "total_words": 200700,
+            "total_non_words": 873,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.004349775784753363,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 970741
+        },
+        "v051": {
+            "total_words": 181537,
+            "total_non_words": 361,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.001988575331750552,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 908900
+        },
+        "v053": {
+            "total_words": 217069,
+            "total_non_words": 361,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0016630656611492198,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1048352
+        },
+        "v062": {
+            "total_words": 187354,
+            "total_non_words": 360,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.001921496205044995,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 940317
+        },
+        "v024": {
+            "total_words": 222221,
+            "total_non_words": 2136,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.009612052866290764,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1123432
+        },
+        "v096": {
+            "total_words": 171152,
+            "total_non_words": 1064,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.006216696269982238,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 780168
+        },
+        "v030": {
+            "total_words": 183492,
+            "total_non_words": 214,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.001166263379329889,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 932517
+        },
+        "v058": {
+            "total_words": 187688,
+            "total_non_words": 357,
+            "total_non_bo_words": 1,
+            "non_word_percentage": 0.0019020928349175227,
+            "non_bo_word_percentage": 5.327991134222753e-06,
+            "is_premium": true,
+            "start": 0,
+            "end": 958840
+        },
+        "v082": {
+            "total_words": 191382,
+            "total_non_words": 424,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0022154643592396358,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 979482
+        },
+        "v047": {
+            "total_words": 191555,
+            "total_non_words": 368,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0019211192607867193,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 971580
+        },
+        "v074": {
+            "total_words": 195908,
+            "total_non_words": 629,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0032106907323845887,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 918107
+        },
+        "v042": {
+            "total_words": 183218,
+            "total_non_words": 324,
+            "total_non_bo_words": 4,
+            "non_word_percentage": 0.0017683852023272822,
+            "non_bo_word_percentage": 2.1831916078114595e-05,
+            "is_premium": true,
+            "start": 0,
+            "end": 900728
+        },
+        "v063": {
+            "total_words": 188019,
+            "total_non_words": 422,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0022444540179449948,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 929422
+        },
+        "v034": {
+            "total_words": 179844,
+            "total_non_words": 321,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0017848802295322612,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 889092
+        },
+        "v020": {
+            "total_words": 229972,
+            "total_non_words": 240,
+            "total_non_bo_words": 0,
+            "non_word_percentage": 0.0010436053084723357,
+            "non_bo_word_percentage": 0.0,
+            "is_premium": true,
+            "start": 0,
+            "end": 1100187
+        }
+    }
+}
